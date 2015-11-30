@@ -1,0 +1,25 @@
+PODS:
+  - BrightFutures (3.1.2):
+    - Result (= 0.6.0-beta.6)
+  - FPRealm (0.1.0):
+    - BrightFutures
+    - Realm
+  - Realm (0.96.2):
+    - Realm/Headers (= 0.96.2)
+  - Realm/Headers (0.96.2)
+  - Result (0.6.0-beta.6)
+
+DEPENDENCIES:
+  - FPRealm (from `../`)
+
+EXTERNAL SOURCES:
+  FPRealm:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  BrightFutures: 6b4b299decee4c3775a9e7188d1ecec55262e09c
+  FPRealm: b321054f613a2871d02f84a85bd5ee7314d05227
+  Realm: 3ce8448151c571e90b85002d984d7f93f54fc8a3
+  Result: dc390d0b58f9ec43fcd536f1ebdd130803cc6cbc
+
+COCOAPODS: 0.39.0

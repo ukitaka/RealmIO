@@ -1,0 +1,9 @@
+EMBEDDED_CONTENT_CONTAINS_SWIFT = YES
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/FPRealm"
+LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
+OTHER_CFLAGS = $(inherited) -iquote "$CONFIGURATION_BUILD_DIR/BrightFutures.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/Realm.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/Result.framework/Headers" -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/FPRealm"
+OTHER_LDFLAGS = $(inherited) -ObjC -framework "BrightFutures" -framework "Realm" -framework "Result"
+OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
+PODS_FRAMEWORK_BUILD_PATH = $(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods-FPRealm_Tests
+PODS_ROOT = ${SRCROOT}/Pods
