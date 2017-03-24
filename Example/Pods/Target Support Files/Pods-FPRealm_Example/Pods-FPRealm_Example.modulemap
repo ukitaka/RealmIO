@@ -1,6 +1,0 @@
-framework module Pods_FPRealm_Example {
-  umbrella header "Pods-FPRealm_Example-umbrella.h"
-
-  export *
-  module * { export * }
-}
