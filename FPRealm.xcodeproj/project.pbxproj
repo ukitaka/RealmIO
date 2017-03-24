@@ -19,12 +19,12 @@
 		269F081A1E84F91C001EC0C7 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269F08191E84F91C001EC0C7 /* Result.framework */; };
 		269F081C1E84F92F001EC0C7 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269F081B1E84F92F001EC0C7 /* Result.framework */; };
 		269F081E1E84F93F001EC0C7 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269F081D1E84F93F001EC0C7 /* Result.framework */; };
+		269F08201E84FA04001EC0C7 /* ReadWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269F081F1E84FA04001EC0C7 /* ReadWrite.swift */; };
+		269F08211E84FA35001EC0C7 /* ReadWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269F081F1E84FA04001EC0C7 /* ReadWrite.swift */; };
+		269F08221E84FA36001EC0C7 /* ReadWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269F081F1E84FA04001EC0C7 /* ReadWrite.swift */; };
+		269F08231E84FA36001EC0C7 /* ReadWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269F081F1E84FA04001EC0C7 /* ReadWrite.swift */; };
 		52D6D9871BEFF229002C0205 /* FPRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* FPRealm.framework */; };
-		52D6D9981BEFF375002C0205 /* FPRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D6D9961BEFF375002C0205 /* FPRealm.swift */; };
 		52D6D99B1BEFF375002C0205 /* FPRealmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D6D9971BEFF375002C0205 /* FPRealmTests.swift */; };
-		52D6D9EA1BEFFFA4002C0205 /* FPRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D6D9961BEFF375002C0205 /* FPRealm.swift */; };
-		52D6DA091BF00081002C0205 /* FPRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D6D9961BEFF375002C0205 /* FPRealm.swift */; };
-		52D6DA261BF00118002C0205 /* FPRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D6D9961BEFF375002C0205 /* FPRealm.swift */; };
 		DD7502861C68FDDC006590AF /* FPRealmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D6D9971BEFF375002C0205 /* FPRealmTests.swift */; };
 		DD7502881C68FEDE006590AF /* FPRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6DA0F1BF000BD002C0205 /* FPRealm.framework */; };
 		DD7502921C690C7A006590AF /* FPRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D9F01BEFFFBE002C0205 /* FPRealm.framework */; };
@@ -68,9 +68,9 @@
 		269F08191E84F91C001EC0C7 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
 		269F081B1E84F92F001EC0C7 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/watchOS/Result.framework; sourceTree = "<group>"; };
 		269F081D1E84F93F001EC0C7 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/tvOS/Result.framework; sourceTree = "<group>"; };
+		269F081F1E84FA04001EC0C7 /* ReadWrite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadWrite.swift; sourceTree = "<group>"; };
 		52D6D97C1BEFF229002C0205 /* FPRealm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FPRealm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9861BEFF229002C0205 /* FPRealm-iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FPRealm-iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		52D6D9961BEFF375002C0205 /* FPRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FPRealm.swift; path = Sources/FPRealm.swift; sourceTree = "<group>"; };
 		52D6D9971BEFF375002C0205 /* FPRealmTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FPRealmTests.swift; path = Tests/FPRealmTests/FPRealmTests.swift; sourceTree = "<group>"; };
 		52D6D9E21BEFFF6E002C0205 /* FPRealm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FPRealm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9F01BEFFFBE002C0205 /* FPRealm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FPRealm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,7 +171,7 @@
 		52D6D9721BEFF229002C0205 = {
 			isa = PBXGroup;
 			children = (
-				52D6D9961BEFF375002C0205 /* FPRealm.swift */,
+				269F081F1E84FA04001EC0C7 /* ReadWrite.swift */,
 				52D6D9971BEFF375002C0205 /* FPRealmTests.swift */,
 				52D6D99C1BEFF38C002C0205 /* Configs */,
 				52D6D97D1BEFF229002C0205 /* Products */,
@@ -498,7 +498,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52D6D9981BEFF375002C0205 /* FPRealm.swift in Sources */,
+				269F08201E84FA04001EC0C7 /* ReadWrite.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,7 +514,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52D6D9EA1BEFFFA4002C0205 /* FPRealm.swift in Sources */,
+				269F08221E84FA36001EC0C7 /* ReadWrite.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,7 +522,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52D6DA091BF00081002C0205 /* FPRealm.swift in Sources */,
+				269F08211E84FA35001EC0C7 /* ReadWrite.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,7 +530,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52D6DA261BF00118002C0205 /* FPRealm.swift in Sources */,
+				269F08231E84FA36001EC0C7 /* ReadWrite.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -909,6 +909,7 @@
 		DD7502831C68FCFC006590AF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Configs/FPRealmTests.plist;
@@ -924,6 +925,7 @@
 		DD7502841C68FCFC006590AF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Configs/FPRealmTests.plist;
@@ -940,6 +942,7 @@
 		DD7502961C690C7A006590AF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = Configs/FPRealmTests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.FPRealm.FPRealm-tvOS-Tests";
@@ -953,6 +956,7 @@
 		DD7502971C690C7A006590AF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = Configs/FPRealmTests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.FPRealm.FPRealm-tvOS-Tests";
