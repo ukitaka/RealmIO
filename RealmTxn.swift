@@ -9,7 +9,7 @@
 import RealmSwift
 
 public struct RealmTxn<RW, T> {
-    fileprivate let _run: (Realm) -> RealmResult<T>
+    internal let _run: (Realm) -> RealmResult<T>
 
     public init(_ _run: @escaping (Realm) -> RealmResult<T>) {
         self._run = _run
