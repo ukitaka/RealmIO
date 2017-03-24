@@ -6,8 +6,8 @@
 //  Copyright © 2017年 waft. All rights reserved.
 //
 
+import Foundation
 import RealmSwift
-
 
 public extension Realm {
     public func runTxn<T>(txn: RealmReadTxn<T>) -> RealmResult<T> {
@@ -26,8 +26,10 @@ public extension Realm {
             try self.write {
                 result = f()
             }
-        } catch {
-            result = .failure(RealmError(error: error))
+        } catch let error as Realm.Error {
+            result = .failure(error)
+        } catch let error {
+            result = .failure(Realm.Error(_nsError: error as NSError))
         }
         return result
     }

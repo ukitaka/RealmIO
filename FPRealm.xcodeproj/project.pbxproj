@@ -24,15 +24,11 @@
 		269F08221E84FA36001EC0C7 /* ReadWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269F081F1E84FA04001EC0C7 /* ReadWrite.swift */; };
 		269F08251E84FA73001EC0C7 /* RealmTxn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269F08241E84FA73001EC0C7 /* RealmTxn.swift */; };
 		269F08281E84FAC6001EC0C7 /* RealmResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269F08271E84FAC6001EC0C7 /* RealmResult.swift */; };
-		269F082A1E84FAED001EC0C7 /* RealmError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269F08291E84FAED001EC0C7 /* RealmError.swift */; };
-		269F082E1E84FAF2001EC0C7 /* RealmError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269F08291E84FAED001EC0C7 /* RealmError.swift */; };
 		269F082F1E84FAF2001EC0C7 /* RealmTxn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269F08241E84FA73001EC0C7 /* RealmTxn.swift */; };
 		269F08301E84FAF2001EC0C7 /* RealmResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269F08271E84FAC6001EC0C7 /* RealmResult.swift */; };
-		269F08311E84FAF2001EC0C7 /* RealmError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269F08291E84FAED001EC0C7 /* RealmError.swift */; };
 		269F08321E84FAF2001EC0C7 /* RealmTxn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269F08241E84FA73001EC0C7 /* RealmTxn.swift */; };
 		269F08331E84FAF2001EC0C7 /* RealmResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269F08271E84FAC6001EC0C7 /* RealmResult.swift */; };
 		269F08341E84FAF2001EC0C7 /* ReadWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269F081F1E84FA04001EC0C7 /* ReadWrite.swift */; };
-		269F08351E84FAF3001EC0C7 /* RealmError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269F08291E84FAED001EC0C7 /* RealmError.swift */; };
 		269F08361E84FAF3001EC0C7 /* RealmTxn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269F08241E84FA73001EC0C7 /* RealmTxn.swift */; };
 		269F08371E84FAF3001EC0C7 /* RealmResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269F08271E84FAC6001EC0C7 /* RealmResult.swift */; };
 		269F08391E84FD16001EC0C7 /* TxnRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269F08381E84FD16001EC0C7 /* TxnRunner.swift */; };
@@ -87,7 +83,6 @@
 		269F081F1E84FA04001EC0C7 /* ReadWrite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadWrite.swift; sourceTree = "<group>"; };
 		269F08241E84FA73001EC0C7 /* RealmTxn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmTxn.swift; sourceTree = "<group>"; };
 		269F08271E84FAC6001EC0C7 /* RealmResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmResult.swift; sourceTree = "<group>"; };
-		269F08291E84FAED001EC0C7 /* RealmError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmError.swift; sourceTree = "<group>"; };
 		269F08381E84FD16001EC0C7 /* TxnRunner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TxnRunner.swift; sourceTree = "<group>"; };
 		52D6D97C1BEFF229002C0205 /* FPRealm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FPRealm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9861BEFF229002C0205 /* FPRealm-iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FPRealm-iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -199,7 +194,6 @@
 		52D6D9721BEFF229002C0205 = {
 			isa = PBXGroup;
 			children = (
-				269F08291E84FAED001EC0C7 /* RealmError.swift */,
 				269F08241E84FA73001EC0C7 /* RealmTxn.swift */,
 				269F08271E84FAC6001EC0C7 /* RealmResult.swift */,
 				269F081F1E84FA04001EC0C7 /* ReadWrite.swift */,
@@ -532,7 +526,6 @@
 			files = (
 				269F08281E84FAC6001EC0C7 /* RealmResult.swift in Sources */,
 				269F08251E84FA73001EC0C7 /* RealmTxn.swift in Sources */,
-				269F082A1E84FAED001EC0C7 /* RealmError.swift in Sources */,
 				269F08391E84FD16001EC0C7 /* TxnRunner.swift in Sources */,
 				269F08201E84FA04001EC0C7 /* ReadWrite.swift in Sources */,
 			);
@@ -551,7 +544,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				269F08301E84FAF2001EC0C7 /* RealmResult.swift in Sources */,
-				269F082E1E84FAF2001EC0C7 /* RealmError.swift in Sources */,
 				269F08221E84FA36001EC0C7 /* ReadWrite.swift in Sources */,
 				269F083B1E84FD16001EC0C7 /* TxnRunner.swift in Sources */,
 				269F082F1E84FAF2001EC0C7 /* RealmTxn.swift in Sources */,
@@ -563,7 +555,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				269F08371E84FAF3001EC0C7 /* RealmResult.swift in Sources */,
-				269F08351E84FAF3001EC0C7 /* RealmError.swift in Sources */,
 				269F08211E84FA35001EC0C7 /* ReadWrite.swift in Sources */,
 				269F083C1E84FD16001EC0C7 /* TxnRunner.swift in Sources */,
 				269F08361E84FAF3001EC0C7 /* RealmTxn.swift in Sources */,
@@ -578,7 +569,6 @@
 				269F08341E84FAF2001EC0C7 /* ReadWrite.swift in Sources */,
 				269F08321E84FAF2001EC0C7 /* RealmTxn.swift in Sources */,
 				269F083A1E84FD16001EC0C7 /* TxnRunner.swift in Sources */,
-				269F08311E84FAF2001EC0C7 /* RealmError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

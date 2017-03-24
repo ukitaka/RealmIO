@@ -7,5 +7,7 @@
 //
 
 import Result
+import Realm
+import RealmSwift
 
-public typealias RealmResult<T> = Result<T, RealmError>
+public typealias RealmResult<T> = Result<T, Realm.Error>
