@@ -10,12 +10,8 @@ import Foundation
 
 // MARK: - Read
 
-public protocol _Read { }
-
-public struct Read: _Read { }
+public struct Read { }
 
 // MARK: - Write
 
-public protocol _Write { }
-
-public struct Write: _Write { }
+public struct Write { }

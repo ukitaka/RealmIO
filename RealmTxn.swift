@@ -36,7 +36,7 @@ public typealias RealmWriteTxn<T> = RealmTxn<Write, T>
 
 // MARK: - flatMap
 
-public extension RealmTxn where RW: _Read {
+public extension RealmTxn where RW == Read {
     // Read & Write -> Write
     public func flatMap<S>(_ f: @escaping (T) -> RealmWriteTxn<S>) -> RealmWriteTxn<S> {
         return RealmWriteTxn<S> { realm in
@@ -52,7 +52,7 @@ public extension RealmTxn where RW: _Read {
     }
 }
 
-public extension RealmTxn where RW: _Write {
+public extension RealmTxn where RW == Write {
     // Write & Any -> Write
     public func flatMap<RW2, S>(_ f: @escaping (T) -> RealmTxn<RW2, S>) -> RealmWriteTxn<S> {
         return RealmWriteTxn<S> { realm in
