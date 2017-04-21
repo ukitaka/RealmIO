@@ -7,6 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2638BC7D1EA9A14900E12297 /* ReadWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2638BC791EA9A14900E12297 /* ReadWrite.swift */; };
+		2638BC7E1EA9A14900E12297 /* RealmResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2638BC7A1EA9A14900E12297 /* RealmResult.swift */; };
+		2638BC7F1EA9A14900E12297 /* RealmTxn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2638BC7B1EA9A14900E12297 /* RealmTxn.swift */; };
+		2638BC801EA9A14900E12297 /* TxnRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2638BC7C1EA9A14900E12297 /* TxnRunner.swift */; };
+		2638BC811EA9A15500E12297 /* ReadWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2638BC791EA9A14900E12297 /* ReadWrite.swift */; };
+		2638BC821EA9A15500E12297 /* RealmResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2638BC7A1EA9A14900E12297 /* RealmResult.swift */; };
+		2638BC831EA9A15500E12297 /* RealmTxn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2638BC7B1EA9A14900E12297 /* RealmTxn.swift */; };
+		2638BC841EA9A15500E12297 /* TxnRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2638BC7C1EA9A14900E12297 /* TxnRunner.swift */; };
+		2638BC851EA9A15500E12297 /* ReadWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2638BC791EA9A14900E12297 /* ReadWrite.swift */; };
+		2638BC861EA9A15500E12297 /* RealmResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2638BC7A1EA9A14900E12297 /* RealmResult.swift */; };
+		2638BC871EA9A15500E12297 /* RealmTxn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2638BC7B1EA9A14900E12297 /* RealmTxn.swift */; };
+		2638BC881EA9A15500E12297 /* TxnRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2638BC7C1EA9A14900E12297 /* TxnRunner.swift */; };
+		2638BC891EA9A15600E12297 /* ReadWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2638BC791EA9A14900E12297 /* ReadWrite.swift */; };
+		2638BC8A1EA9A15600E12297 /* RealmResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2638BC7A1EA9A14900E12297 /* RealmResult.swift */; };
+		2638BC8B1EA9A15600E12297 /* RealmTxn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2638BC7B1EA9A14900E12297 /* RealmTxn.swift */; };
+		2638BC8C1EA9A15600E12297 /* TxnRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2638BC7C1EA9A14900E12297 /* TxnRunner.swift */; };
+		2638BC8D1EA9A1D200E12297 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269F08071E84F7D0001EC0C7 /* Realm.framework */; };
+		2638BC8E1EA9A1D200E12297 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269F08081E84F7D0001EC0C7 /* RealmSwift.framework */; };
+		2638BC8F1EA9A1D200E12297 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269F08171E84F90B001EC0C7 /* Result.framework */; };
+		2638BC901EA9A21D00E12297 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269F080B1E84F7E2001EC0C7 /* Realm.framework */; };
+		2638BC911EA9A21D00E12297 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269F080C1E84F7E2001EC0C7 /* RealmSwift.framework */; };
+		2638BC921EA9A21D00E12297 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269F08191E84F91C001EC0C7 /* Result.framework */; };
+		2638BC931EA9A23300E12297 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269F08131E84F805001EC0C7 /* Realm.framework */; };
+		2638BC941EA9A23300E12297 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269F08141E84F805001EC0C7 /* RealmSwift.framework */; };
+		2638BC951EA9A23300E12297 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269F081D1E84F93F001EC0C7 /* Result.framework */; };
 		269F08091E84F7D0001EC0C7 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269F08071E84F7D0001EC0C7 /* Realm.framework */; };
 		269F080A1E84F7D0001EC0C7 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269F08081E84F7D0001EC0C7 /* RealmSwift.framework */; };
 		269F080D1E84F7E2001EC0C7 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269F080B1E84F7E2001EC0C7 /* Realm.framework */; };
@@ -19,22 +44,6 @@
 		269F081A1E84F91C001EC0C7 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269F08191E84F91C001EC0C7 /* Result.framework */; };
 		269F081C1E84F92F001EC0C7 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269F081B1E84F92F001EC0C7 /* Result.framework */; };
 		269F081E1E84F93F001EC0C7 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269F081D1E84F93F001EC0C7 /* Result.framework */; };
-		269F08201E84FA04001EC0C7 /* ReadWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269F081F1E84FA04001EC0C7 /* ReadWrite.swift */; };
-		269F08211E84FA35001EC0C7 /* ReadWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269F081F1E84FA04001EC0C7 /* ReadWrite.swift */; };
-		269F08221E84FA36001EC0C7 /* ReadWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269F081F1E84FA04001EC0C7 /* ReadWrite.swift */; };
-		269F08251E84FA73001EC0C7 /* RealmTxn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269F08241E84FA73001EC0C7 /* RealmTxn.swift */; };
-		269F08281E84FAC6001EC0C7 /* RealmResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269F08271E84FAC6001EC0C7 /* RealmResult.swift */; };
-		269F082F1E84FAF2001EC0C7 /* RealmTxn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269F08241E84FA73001EC0C7 /* RealmTxn.swift */; };
-		269F08301E84FAF2001EC0C7 /* RealmResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269F08271E84FAC6001EC0C7 /* RealmResult.swift */; };
-		269F08321E84FAF2001EC0C7 /* RealmTxn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269F08241E84FA73001EC0C7 /* RealmTxn.swift */; };
-		269F08331E84FAF2001EC0C7 /* RealmResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269F08271E84FAC6001EC0C7 /* RealmResult.swift */; };
-		269F08341E84FAF2001EC0C7 /* ReadWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269F081F1E84FA04001EC0C7 /* ReadWrite.swift */; };
-		269F08361E84FAF3001EC0C7 /* RealmTxn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269F08241E84FA73001EC0C7 /* RealmTxn.swift */; };
-		269F08371E84FAF3001EC0C7 /* RealmResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269F08271E84FAC6001EC0C7 /* RealmResult.swift */; };
-		269F08391E84FD16001EC0C7 /* TxnRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269F08381E84FD16001EC0C7 /* TxnRunner.swift */; };
-		269F083A1E84FD16001EC0C7 /* TxnRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269F08381E84FD16001EC0C7 /* TxnRunner.swift */; };
-		269F083B1E84FD16001EC0C7 /* TxnRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269F08381E84FD16001EC0C7 /* TxnRunner.swift */; };
-		269F083C1E84FD16001EC0C7 /* TxnRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269F08381E84FD16001EC0C7 /* TxnRunner.swift */; };
 		52D6D9871BEFF229002C0205 /* FPRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* FPRealm.framework */; };
 		52D6D99B1BEFF375002C0205 /* FPRealmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D6D9971BEFF375002C0205 /* FPRealmTests.swift */; };
 		DD7502861C68FDDC006590AF /* FPRealmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D6D9971BEFF375002C0205 /* FPRealmTests.swift */; };
@@ -68,6 +77,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2638BC791EA9A14900E12297 /* ReadWrite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReadWrite.swift; path = ReadWrite.swift; sourceTree = "<group>"; };
+		2638BC7A1EA9A14900E12297 /* RealmResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmResult.swift; path = RealmResult.swift; sourceTree = "<group>"; };
+		2638BC7B1EA9A14900E12297 /* RealmTxn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmTxn.swift; path = RealmTxn.swift; sourceTree = "<group>"; };
+		2638BC7C1EA9A14900E12297 /* TxnRunner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TxnRunner.swift; path = TxnRunner.swift; sourceTree = "<group>"; };
 		269F08071E84F7D0001EC0C7 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		269F08081E84F7D0001EC0C7 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		269F080B1E84F7E2001EC0C7 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/Mac/Realm.framework; sourceTree = "<group>"; };
@@ -80,13 +93,9 @@
 		269F08191E84F91C001EC0C7 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
 		269F081B1E84F92F001EC0C7 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/watchOS/Result.framework; sourceTree = "<group>"; };
 		269F081D1E84F93F001EC0C7 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/tvOS/Result.framework; sourceTree = "<group>"; };
-		269F081F1E84FA04001EC0C7 /* ReadWrite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadWrite.swift; sourceTree = "<group>"; };
-		269F08241E84FA73001EC0C7 /* RealmTxn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmTxn.swift; sourceTree = "<group>"; };
-		269F08271E84FAC6001EC0C7 /* RealmResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmResult.swift; sourceTree = "<group>"; };
-		269F08381E84FD16001EC0C7 /* TxnRunner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TxnRunner.swift; sourceTree = "<group>"; };
 		52D6D97C1BEFF229002C0205 /* FPRealm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FPRealm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9861BEFF229002C0205 /* FPRealm-iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FPRealm-iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		52D6D9971BEFF375002C0205 /* FPRealmTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FPRealmTests.swift; path = Tests/FPRealmTests/FPRealmTests.swift; sourceTree = "<group>"; };
+		52D6D9971BEFF375002C0205 /* FPRealmTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FPRealmTests.swift; path = FPRealmTests.swift; sourceTree = "<group>"; };
 		52D6D9E21BEFFF6E002C0205 /* FPRealm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FPRealm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9F01BEFFFBE002C0205 /* FPRealm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FPRealm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6DA0F1BF000BD002C0205 /* FPRealm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FPRealm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +120,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2638BC8D1EA9A1D200E12297 /* Realm.framework in Frameworks */,
+				2638BC8E1EA9A1D200E12297 /* RealmSwift.framework in Frameworks */,
+				2638BC8F1EA9A1D200E12297 /* Result.framework in Frameworks */,
 				52D6D9871BEFF229002C0205 /* FPRealm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -149,6 +161,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2638BC901EA9A21D00E12297 /* Realm.framework in Frameworks */,
+				2638BC911EA9A21D00E12297 /* RealmSwift.framework in Frameworks */,
+				2638BC921EA9A21D00E12297 /* Result.framework in Frameworks */,
 				DD7502881C68FEDE006590AF /* FPRealm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -157,6 +172,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2638BC931EA9A23300E12297 /* Realm.framework in Frameworks */,
+				2638BC941EA9A23300E12297 /* RealmSwift.framework in Frameworks */,
+				2638BC951EA9A23300E12297 /* Result.framework in Frameworks */,
 				DD7502921C690C7A006590AF /* FPRealm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -164,6 +182,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2638BC781EA9A13500E12297 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				2638BC791EA9A14900E12297 /* ReadWrite.swift */,
+				2638BC7A1EA9A14900E12297 /* RealmResult.swift */,
+				2638BC7B1EA9A14900E12297 /* RealmTxn.swift */,
+				2638BC7C1EA9A14900E12297 /* TxnRunner.swift */,
+			);
+			name = Sources;
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		269F08061E84F7D0001EC0C7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,19 +219,17 @@
 				52D6D9971BEFF375002C0205 /* FPRealmTests.swift */,
 			);
 			name = Tests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		52D6D9721BEFF229002C0205 = {
 			isa = PBXGroup;
 			children = (
-				269F08241E84FA73001EC0C7 /* RealmTxn.swift */,
-				269F08271E84FAC6001EC0C7 /* RealmResult.swift */,
-				269F081F1E84FA04001EC0C7 /* ReadWrite.swift */,
-				269F08381E84FD16001EC0C7 /* TxnRunner.swift */,
-				269F08261E84FAA5001EC0C7 /* Tests */,
 				52D6D99C1BEFF38C002C0205 /* Configs */,
-				52D6D97D1BEFF229002C0205 /* Products */,
 				269F08061E84F7D0001EC0C7 /* Frameworks */,
+				52D6D97D1BEFF229002C0205 /* Products */,
+				2638BC781EA9A13500E12297 /* Sources */,
+				269F08261E84FAA5001EC0C7 /* Tests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -234,6 +262,7 @@
 				AD2FAA261CD0B6D800659CF4 /* FPRealm.plist */,
 			);
 			name = Frameworks;
+			path = Frameworks;
 			sourceTree = "<group>";
 		};
 		DD7502731C68FC20006590AF /* Tests */ = {
@@ -242,6 +271,7 @@
 				AD2FAA281CD0B6E100659CF4 /* FPRealmTests.plist */,
 			);
 			name = Tests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -416,7 +446,7 @@
 				TargetAttributes = {
 					52D6D97B1BEFF229002C0205 = {
 						CreatedOnToolsVersion = 7.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0830;
 					};
 					52D6D9851BEFF229002C0205 = {
 						CreatedOnToolsVersion = 7.1;
@@ -524,10 +554,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				269F08281E84FAC6001EC0C7 /* RealmResult.swift in Sources */,
-				269F08251E84FA73001EC0C7 /* RealmTxn.swift in Sources */,
-				269F08391E84FD16001EC0C7 /* TxnRunner.swift in Sources */,
-				269F08201E84FA04001EC0C7 /* ReadWrite.swift in Sources */,
+				2638BC7E1EA9A14900E12297 /* RealmResult.swift in Sources */,
+				2638BC7D1EA9A14900E12297 /* ReadWrite.swift in Sources */,
+				2638BC801EA9A14900E12297 /* TxnRunner.swift in Sources */,
+				2638BC7F1EA9A14900E12297 /* RealmTxn.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,10 +573,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				269F08301E84FAF2001EC0C7 /* RealmResult.swift in Sources */,
-				269F08221E84FA36001EC0C7 /* ReadWrite.swift in Sources */,
-				269F083B1E84FD16001EC0C7 /* TxnRunner.swift in Sources */,
-				269F082F1E84FAF2001EC0C7 /* RealmTxn.swift in Sources */,
+				2638BC861EA9A15500E12297 /* RealmResult.swift in Sources */,
+				2638BC851EA9A15500E12297 /* ReadWrite.swift in Sources */,
+				2638BC881EA9A15500E12297 /* TxnRunner.swift in Sources */,
+				2638BC871EA9A15500E12297 /* RealmTxn.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,10 +584,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				269F08371E84FAF3001EC0C7 /* RealmResult.swift in Sources */,
-				269F08211E84FA35001EC0C7 /* ReadWrite.swift in Sources */,
-				269F083C1E84FD16001EC0C7 /* TxnRunner.swift in Sources */,
-				269F08361E84FAF3001EC0C7 /* RealmTxn.swift in Sources */,
+				2638BC8A1EA9A15600E12297 /* RealmResult.swift in Sources */,
+				2638BC891EA9A15600E12297 /* ReadWrite.swift in Sources */,
+				2638BC8C1EA9A15600E12297 /* TxnRunner.swift in Sources */,
+				2638BC8B1EA9A15600E12297 /* RealmTxn.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,10 +595,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				269F08331E84FAF2001EC0C7 /* RealmResult.swift in Sources */,
-				269F08341E84FAF2001EC0C7 /* ReadWrite.swift in Sources */,
-				269F08321E84FAF2001EC0C7 /* RealmTxn.swift in Sources */,
-				269F083A1E84FD16001EC0C7 /* TxnRunner.swift in Sources */,
+				2638BC821EA9A15500E12297 /* RealmResult.swift in Sources */,
+				2638BC811EA9A15500E12297 /* ReadWrite.swift in Sources */,
+				2638BC841EA9A15500E12297 /* TxnRunner.swift in Sources */,
+				2638BC831EA9A15500E12297 /* RealmTxn.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -718,7 +748,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = Configs/FPRealm.plist;
+				INFOPLIST_FILE = Configs/Frameworks/FPRealm.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -745,7 +775,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = Configs/FPRealm.plist;
+				INFOPLIST_FILE = Configs/Frameworks/FPRealm.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -760,8 +790,13 @@
 		52D6D9941BEFF229002C0205 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
-				INFOPLIST_FILE = Configs/FPRealmTests.plist;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Configs/Tests/FPRealmTests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.FPRealm.FPRealm-iOS-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -773,8 +808,13 @@
 		52D6D9951BEFF229002C0205 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
-				INFOPLIST_FILE = Configs/FPRealmTests.plist;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Configs/Tests/FPRealmTests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.FPRealm.FPRealm-iOS-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -796,7 +836,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/watchOS",
 				);
-				INFOPLIST_FILE = Configs/FPRealm.plist;
+				INFOPLIST_FILE = Configs/Frameworks/FPRealm.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.FPRealm.FPRealm-watchOS";
@@ -822,7 +862,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/watchOS",
 				);
-				INFOPLIST_FILE = Configs/FPRealm.plist;
+				INFOPLIST_FILE = Configs/Frameworks/FPRealm.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.FPRealm.FPRealm-watchOS";
@@ -849,7 +889,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/tvOS",
 				);
-				INFOPLIST_FILE = Configs/FPRealm.plist;
+				INFOPLIST_FILE = Configs/Frameworks/FPRealm.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.FPRealm.FPRealm-tvOS";
@@ -875,7 +915,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/tvOS",
 				);
-				INFOPLIST_FILE = Configs/FPRealm.plist;
+				INFOPLIST_FILE = Configs/Frameworks/FPRealm.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.FPRealm.FPRealm-tvOS";
@@ -904,7 +944,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = Configs/FPRealm.plist;
+				INFOPLIST_FILE = Configs/Frameworks/FPRealm.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
@@ -931,7 +971,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = Configs/FPRealm.plist;
+				INFOPLIST_FILE = Configs/Frameworks/FPRealm.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
@@ -950,7 +990,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = Configs/FPRealmTests.plist;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = Configs/Tests/FPRealmTests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.FPRealm.FPRealm-macOS-Tests";
@@ -966,7 +1010,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = Configs/FPRealmTests.plist;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = Configs/Tests/FPRealmTests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.FPRealm.FPRealm-macOS-Tests";
@@ -981,7 +1029,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = Configs/FPRealmTests.plist;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
+				INFOPLIST_FILE = Configs/Tests/FPRealmTests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.FPRealm.FPRealm-tvOS-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -995,7 +1047,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = Configs/FPRealmTests.plist;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
+				INFOPLIST_FILE = Configs/Tests/FPRealmTests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.FPRealm.FPRealm-tvOS-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
