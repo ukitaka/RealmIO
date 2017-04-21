@@ -15,6 +15,12 @@ public struct RealmTxn<RW, T> {
         self._run = _run
     }
 
+    public init(_ _run: @escaping (Realm) -> T) {
+        self._run = { realm in
+            RealmResult<T>.success(_run(realm))
+        }
+    }
+
     public func map<S>(_ f: @escaping (T) -> S) -> RealmTxn<RW, S> {
         return RealmTxn<RW, S> { realm in
             self._run(realm).map(f)
