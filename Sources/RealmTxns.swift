@@ -89,3 +89,25 @@ public extension RealmTxns {
         }
     }
 }
+
+// MARK: - utils
+
+public extension RealmTxn where T: Object {
+    public static func object<K>(forPrimaryKey key: K) -> RealmReadTxn<T?> {
+        return RealmReadTxn<T?>.success { realm in
+            realm.object(ofType: T.self, forPrimaryKey: key)
+        }
+    }
+
+    public static func objects() -> RealmReadTxn<RealmSwift.Results<T>> {
+        return RealmReadTxn<RealmSwift.Results<T>>.success { realm in
+            realm.objects(T.self)
+        }
+    }
+
+    public static func create(value: Any = [:], update: Bool = false) -> RealmWriteTxn<T> {
+        return RealmWriteTxn<T>.success { realm in
+            return realm.create(T.self, value: value, update: update)
+        }
+    }
+}

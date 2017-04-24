@@ -33,6 +33,9 @@
 		2638BC941EA9A23300E12297 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269F08141E84F805001EC0C7 /* RealmSwift.framework */; };
 		2638BC951EA9A23300E12297 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269F081D1E84F93F001EC0C7 /* Result.framework */; };
 		2638BC991EADF9EF00E12297 /* RealmTxns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2638BC981EADF9EF00E12297 /* RealmTxns.swift */; };
+		2638BC9A1EAE026100E12297 /* RealmTxns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2638BC981EADF9EF00E12297 /* RealmTxns.swift */; };
+		2638BC9B1EAE026100E12297 /* RealmTxns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2638BC981EADF9EF00E12297 /* RealmTxns.swift */; };
+		2638BC9C1EAE026200E12297 /* RealmTxns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2638BC981EADF9EF00E12297 /* RealmTxns.swift */; };
 		269F08091E84F7D0001EC0C7 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269F08071E84F7D0001EC0C7 /* Realm.framework */; };
 		269F080A1E84F7D0001EC0C7 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269F08081E84F7D0001EC0C7 /* RealmSwift.framework */; };
 		269F080D1E84F7E2001EC0C7 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269F080B1E84F7E2001EC0C7 /* Realm.framework */; };
@@ -573,6 +576,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2638BC9B1EAE026100E12297 /* RealmTxns.swift in Sources */,
 				2638BC861EA9A15500E12297 /* RealmResult.swift in Sources */,
 				2638BC851EA9A15500E12297 /* ReadWrite.swift in Sources */,
 				2638BC881EA9A15500E12297 /* TxnRunner.swift in Sources */,
@@ -584,6 +588,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2638BC9A1EAE026100E12297 /* RealmTxns.swift in Sources */,
 				2638BC8A1EA9A15600E12297 /* RealmResult.swift in Sources */,
 				2638BC891EA9A15600E12297 /* ReadWrite.swift in Sources */,
 				2638BC8C1EA9A15600E12297 /* TxnRunner.swift in Sources */,
@@ -595,6 +600,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2638BC9C1EAE026200E12297 /* RealmTxns.swift in Sources */,
 				2638BC821EA9A15500E12297 /* RealmResult.swift in Sources */,
 				2638BC811EA9A15500E12297 /* ReadWrite.swift in Sources */,
 				2638BC841EA9A15500E12297 /* TxnRunner.swift in Sources */,
