@@ -82,3 +82,11 @@ public extension RealmTxn where T: Object {
         }
     }
 }
+
+public extension RealmTxn {
+    public static func add(_ object: Object, update: Bool = false) -> RealmWriteTxn<Void> {
+        return RealmWriteTxn<Void>.success { realm in
+            realm.add(object, update: update)
+        }
+    }
+}
