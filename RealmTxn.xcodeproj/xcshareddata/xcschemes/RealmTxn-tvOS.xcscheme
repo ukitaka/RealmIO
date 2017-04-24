@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "52D6D9EF1BEFFFBE002C0205"
-               BuildableName = "FPRealm.framework"
-               BlueprintName = "FPRealm-tvOS"
-               ReferencedContainer = "container:FPRealm.xcodeproj">
+               BuildableName = "RealmTxn.framework"
+               BlueprintName = "RealmTxn-tvOS"
+               ReferencedContainer = "container:RealmTxn.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,9 +34,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DD75028C1C690C7A006590AF"
-               BuildableName = "FPRealm-tvOS Tests.xctest"
-               BlueprintName = "FPRealm-tvOS Tests"
-               ReferencedContainer = "container:FPRealm.xcodeproj">
+               BuildableName = "RealmTxn-tvOS Tests.xctest"
+               BlueprintName = "RealmTxn-tvOS Tests"
+               ReferencedContainer = "container:RealmTxn.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -44,9 +44,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "52D6D9EF1BEFFFBE002C0205"
-            BuildableName = "FPRealm.framework"
-            BlueprintName = "FPRealm-tvOS"
-            ReferencedContainer = "container:FPRealm.xcodeproj">
+            BuildableName = "RealmTxn.framework"
+            BlueprintName = "RealmTxn-tvOS"
+            ReferencedContainer = "container:RealmTxn.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -66,9 +66,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "52D6D9EF1BEFFFBE002C0205"
-            BuildableName = "FPRealm.framework"
-            BlueprintName = "FPRealm-tvOS"
-            ReferencedContainer = "container:FPRealm.xcodeproj">
+            BuildableName = "RealmTxn.framework"
+            BlueprintName = "RealmTxn-tvOS"
+            ReferencedContainer = "container:RealmTxn.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -84,9 +84,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "52D6D9EF1BEFFFBE002C0205"
-            BuildableName = "FPRealm.framework"
-            BlueprintName = "FPRealm-tvOS"
-            ReferencedContainer = "container:FPRealm.xcodeproj">
+            BuildableName = "RealmTxn.framework"
+            BlueprintName = "RealmTxn-tvOS"
+            ReferencedContainer = "container:RealmTxn.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "52D6D9E11BEFFF6E002C0205"
-               BuildableName = "FPRealm.framework"
-               BlueprintName = "FPRealm-watchOS"
-               ReferencedContainer = "container:FPRealm.xcodeproj">
+               BlueprintIdentifier = "52D6DA0E1BF000BD002C0205"
+               BuildableName = "RealmTxn.framework"
+               BlueprintName = "RealmTxn-macOS"
+               ReferencedContainer = "container:RealmTxn.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -29,7 +29,26 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       codeCoverageEnabled = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DD7502791C68FCFC006590AF"
+               BuildableName = "RealmTxn-macOS Tests.xctest"
+               BlueprintName = "RealmTxn-macOS Tests"
+               ReferencedContainer = "container:RealmTxn.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "52D6DA0E1BF000BD002C0205"
+            BuildableName = "RealmTxn.framework"
+            BlueprintName = "RealmTxn-macOS"
+            ReferencedContainer = "container:RealmTxn.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -46,10 +65,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "52D6D9E11BEFFF6E002C0205"
-            BuildableName = "FPRealm.framework"
-            BlueprintName = "FPRealm-watchOS"
-            ReferencedContainer = "container:FPRealm.xcodeproj">
+            BlueprintIdentifier = "52D6DA0E1BF000BD002C0205"
+            BuildableName = "RealmTxn.framework"
+            BlueprintName = "RealmTxn-macOS"
+            ReferencedContainer = "container:RealmTxn.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -64,10 +83,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "52D6D9E11BEFFF6E002C0205"
-            BuildableName = "FPRealm.framework"
-            BlueprintName = "FPRealm-watchOS"
-            ReferencedContainer = "container:FPRealm.xcodeproj">
+            BlueprintIdentifier = "52D6DA0E1BF000BD002C0205"
+            BuildableName = "RealmTxn.framework"
+            BlueprintName = "RealmTxn-macOS"
+            ReferencedContainer = "container:RealmTxn.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

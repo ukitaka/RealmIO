@@ -1,6 +1,6 @@
 //
 //  RealmTxns.swift
-//  FPRealm
+//  RealmTxn
 //
 //  Created by ukitaka on 2017/04/24.
 //  Copyright © 2017年 waft. All rights reserved.

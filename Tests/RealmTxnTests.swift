@@ -1,5 +1,5 @@
 //
-//  FPRealmTests.swift
+//  RealmTxnTests.swift
 //  waft
 //
 //  Created by ukitaka on {TODAY}.
@@ -8,19 +8,19 @@
 
 import Foundation
 import XCTest
-import FPRealm
+import RealmTxn
 
-class FPRealmTests: XCTestCase {
+class RealmTxnTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        //// XCTAssertEqual(FPRealm().text, "Hello, World!")
+        //// XCTAssertEqual(RealmTxn().text, "Hello, World!")
     }
 }
 
 #if os(Linux)
-extension FPRealmTests {
-    static var allTests : [(String, (FPRealmTests) -> () throws -> Void)] {
+extension RealmTxnTests {
+    static var allTests : [(String, (RealmTxnTests) -> () throws -> Void)] {
         return [
             ("testExample", testExample),
         ]
