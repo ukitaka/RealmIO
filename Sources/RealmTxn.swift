@@ -69,10 +69,16 @@ public extension RealmTxn where RW == Write {
 
 // MARK: - utils
 
-public extension RealmTxn {
-    public static func object<K>(forPrimaryKey key: K) -> RealmReadTxn<T?> where T : RealmSwift.Object {
+public extension RealmTxn where T: Object {
+    public static func object<K>(forPrimaryKey key: K) -> RealmReadTxn<T?> {
         return RealmReadTxn<T?>.success { realm in
             realm.object(ofType: T.self, forPrimaryKey: key)
+        }
+    }
+
+    public static func objects() -> RealmReadTxn<RealmSwift.Results<T>> {
+        return RealmReadTxn<RealmSwift.Results<T>>.success { realm in
+            realm.objects(T.self)
         }
     }
 }
