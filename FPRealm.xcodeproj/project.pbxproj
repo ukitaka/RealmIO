@@ -32,6 +32,7 @@
 		2638BC931EA9A23300E12297 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269F08131E84F805001EC0C7 /* Realm.framework */; };
 		2638BC941EA9A23300E12297 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269F08141E84F805001EC0C7 /* RealmSwift.framework */; };
 		2638BC951EA9A23300E12297 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269F081D1E84F93F001EC0C7 /* Result.framework */; };
+		2638BC991EADF9EF00E12297 /* RealmTxns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2638BC981EADF9EF00E12297 /* RealmTxns.swift */; };
 		269F08091E84F7D0001EC0C7 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269F08071E84F7D0001EC0C7 /* Realm.framework */; };
 		269F080A1E84F7D0001EC0C7 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269F08081E84F7D0001EC0C7 /* RealmSwift.framework */; };
 		269F080D1E84F7E2001EC0C7 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269F080B1E84F7E2001EC0C7 /* Realm.framework */; };
@@ -77,10 +78,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2638BC791EA9A14900E12297 /* ReadWrite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReadWrite.swift; path = ReadWrite.swift; sourceTree = "<group>"; };
-		2638BC7A1EA9A14900E12297 /* RealmResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmResult.swift; path = RealmResult.swift; sourceTree = "<group>"; };
-		2638BC7B1EA9A14900E12297 /* RealmTxn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmTxn.swift; path = RealmTxn.swift; sourceTree = "<group>"; };
-		2638BC7C1EA9A14900E12297 /* TxnRunner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TxnRunner.swift; path = TxnRunner.swift; sourceTree = "<group>"; };
+		2638BC791EA9A14900E12297 /* ReadWrite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadWrite.swift; sourceTree = "<group>"; };
+		2638BC7A1EA9A14900E12297 /* RealmResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmResult.swift; sourceTree = "<group>"; };
+		2638BC7B1EA9A14900E12297 /* RealmTxn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmTxn.swift; sourceTree = "<group>"; };
+		2638BC7C1EA9A14900E12297 /* TxnRunner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TxnRunner.swift; sourceTree = "<group>"; };
+		2638BC981EADF9EF00E12297 /* RealmTxns.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmTxns.swift; sourceTree = "<group>"; };
 		269F08071E84F7D0001EC0C7 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		269F08081E84F7D0001EC0C7 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		269F080B1E84F7E2001EC0C7 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/Mac/Realm.framework; sourceTree = "<group>"; };
@@ -95,7 +97,7 @@
 		269F081D1E84F93F001EC0C7 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/tvOS/Result.framework; sourceTree = "<group>"; };
 		52D6D97C1BEFF229002C0205 /* FPRealm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FPRealm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9861BEFF229002C0205 /* FPRealm-iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FPRealm-iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		52D6D9971BEFF375002C0205 /* FPRealmTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FPRealmTests.swift; path = FPRealmTests.swift; sourceTree = "<group>"; };
+		52D6D9971BEFF375002C0205 /* FPRealmTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPRealmTests.swift; sourceTree = "<group>"; };
 		52D6D9E21BEFFF6E002C0205 /* FPRealm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FPRealm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9F01BEFFFBE002C0205 /* FPRealm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FPRealm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6DA0F1BF000BD002C0205 /* FPRealm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FPRealm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -188,9 +190,9 @@
 				2638BC791EA9A14900E12297 /* ReadWrite.swift */,
 				2638BC7A1EA9A14900E12297 /* RealmResult.swift */,
 				2638BC7B1EA9A14900E12297 /* RealmTxn.swift */,
+				2638BC981EADF9EF00E12297 /* RealmTxns.swift */,
 				2638BC7C1EA9A14900E12297 /* TxnRunner.swift */,
 			);
-			name = Sources;
 			path = Sources;
 			sourceTree = "<group>";
 		};
@@ -218,7 +220,6 @@
 			children = (
 				52D6D9971BEFF375002C0205 /* FPRealmTests.swift */,
 			);
-			name = Tests;
 			path = Tests;
 			sourceTree = "<group>";
 		};
@@ -261,7 +262,6 @@
 			children = (
 				AD2FAA261CD0B6D800659CF4 /* FPRealm.plist */,
 			);
-			name = Frameworks;
 			path = Frameworks;
 			sourceTree = "<group>";
 		};
@@ -270,7 +270,6 @@
 			children = (
 				AD2FAA281CD0B6E100659CF4 /* FPRealmTests.plist */,
 			);
-			name = Tests;
 			path = Tests;
 			sourceTree = "<group>";
 		};
@@ -554,6 +553,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2638BC991EADF9EF00E12297 /* RealmTxns.swift in Sources */,
 				2638BC7E1EA9A14900E12297 /* RealmResult.swift in Sources */,
 				2638BC7D1EA9A14900E12297 /* ReadWrite.swift in Sources */,
 				2638BC801EA9A14900E12297 /* TxnRunner.swift in Sources */,
