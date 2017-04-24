@@ -99,8 +99,8 @@ public extension RealmTxn where T: Object {
         }
     }
 
-    public static func objects() -> RealmReadTxn<RealmSwift.Results<T>> {
-        return RealmReadTxn<RealmSwift.Results<T>> { realm in
+    public static func objects() -> RealmReadTxn<Results<T>> {
+        return RealmReadTxn<Results<T>> { realm in
             realm.objects(T.self)
         }
     }
