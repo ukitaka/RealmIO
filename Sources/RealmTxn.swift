@@ -15,8 +15,8 @@ public struct RealmTxn<RW, T> {
         self._run = _run
     }
 
-    public init(_ _run: @escaping (Realm) -> T) {
-        self._run = { realm in
+    public static func success(_ _run: @escaping (Realm) -> T) -> RealmTxn<RW, T> {
+        return RealmTxn<RW, T> { realm in
             RealmResult<T>.success(_run(realm))
         }
     }
@@ -63,6 +63,16 @@ public extension RealmTxn where RW == Write {
     public func flatMap<RW2, S>(_ f: @escaping (T) -> RealmTxn<RW2, S>) -> RealmWriteTxn<S> {
         return RealmWriteTxn<S> { realm in
             self._run(realm).flatMap { t in f(t)._run(realm) }
+        }
+    }
+}
+
+// MARK: - utils
+
+public extension RealmTxn {
+    public static func object<K>(forPrimaryKey key: K) -> RealmReadTxn<T?> where T : RealmSwift.Object {
+        return RealmReadTxn<T?>.success { realm in
+            realm.object(ofType: T.self, forPrimaryKey: key)
         }
     }
 }
