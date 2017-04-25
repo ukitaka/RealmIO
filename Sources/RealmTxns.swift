@@ -13,15 +13,15 @@ public struct RealmTxns { }
 // MARK: - Write
 
 public extension RealmTxns {
-    public static func add(_ object: Object, update: Bool = false) -> RealmWriteTxn<Void> {
+    public static func add(_ object: @escaping @autoclosure () -> Object, update: Bool = false) -> RealmWriteTxn<Void> {
         return RealmWriteTxn<Void> { realm in
-            realm.add(object, update: update)
+            realm.add(object(), update: update)
         }
     }
 
-    public static func add<S>(_ objects: S, update: Bool = false) -> RealmWriteTxn<Void> where S: Sequence, S.Iterator.Element: Object {
+    public static func add<S>(_ objects: @escaping @autoclosure () -> S, update: Bool = false) -> RealmWriteTxn<Void> where S: Sequence, S.Iterator.Element: Object {
         return RealmWriteTxn<Void> { realm in
-            realm.add(objects, update: update)
+            realm.add(objects(), update: update)
         }
     }
     
