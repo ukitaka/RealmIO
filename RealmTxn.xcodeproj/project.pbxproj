@@ -49,6 +49,9 @@
 		26AF8C0B1EAF0BBA005CF454 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26AF8C091EAF0BBA005CF454 /* Quick.framework */; };
 		26AF8C0C1EAF0BC2005CF454 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 26AF8C081EAF0BBA005CF454 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		26AF8C0D1EAF0BC2005CF454 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 26AF8C091EAF0BBA005CF454 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		26AF8C0F1EAF2E77005CF454 /* FlatMapSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF8C0E1EAF2E77005CF454 /* FlatMapSpec.swift */; };
+		26AF8C101EAF2E77005CF454 /* FlatMapSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF8C0E1EAF2E77005CF454 /* FlatMapSpec.swift */; };
+		26AF8C111EAF2E77005CF454 /* FlatMapSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF8C0E1EAF2E77005CF454 /* FlatMapSpec.swift */; };
 		52D6D9871BEFF229002C0205 /* RealmTxn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* RealmTxn.framework */; };
 		DD7502881C68FEDE006590AF /* RealmTxn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6DA0F1BF000BD002C0205 /* RealmTxn.framework */; };
 		DD7502921C690C7A006590AF /* RealmTxn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D9F01BEFFFBE002C0205 /* RealmTxn.framework */; };
@@ -152,6 +155,7 @@
 		26AF8C031EAF0AA9005CF454 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/Mac/Quick.framework; sourceTree = "<group>"; };
 		26AF8C081EAF0BBA005CF454 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/tvOS/Nimble.framework; sourceTree = "<group>"; };
 		26AF8C091EAF0BBA005CF454 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/tvOS/Quick.framework; sourceTree = "<group>"; };
+		26AF8C0E1EAF2E77005CF454 /* FlatMapSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatMapSpec.swift; sourceTree = "<group>"; };
 		52D6D97C1BEFF229002C0205 /* RealmTxn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RealmTxn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9861BEFF229002C0205 /* RealmTxn-iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RealmTxn-iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9E21BEFFF6E002C0205 /* RealmTxn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RealmTxn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -278,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				E828333C1EAE3DD00024D7FB /* Objects.swift */,
+				26AF8C0E1EAF2E77005CF454 /* FlatMapSpec.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -603,6 +608,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26AF8C0F1EAF2E77005CF454 /* FlatMapSpec.swift in Sources */,
 				E828333D1EAE3DD00024D7FB /* Objects.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -647,6 +653,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26AF8C101EAF2E77005CF454 /* FlatMapSpec.swift in Sources */,
 				E828333E1EAE3DD00024D7FB /* Objects.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -655,6 +662,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26AF8C111EAF2E77005CF454 /* FlatMapSpec.swift in Sources */,
 				E828333F1EAE3DD00024D7FB /* Objects.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

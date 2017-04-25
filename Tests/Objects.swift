@@ -12,4 +12,8 @@ import RealmTxn
 
 class Dog: Object {
     dynamic var name: String = ""
+
+    override class func primaryKey() -> String? {
+        return "name"
+    }
 }
