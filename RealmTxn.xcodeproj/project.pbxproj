@@ -37,6 +37,18 @@
 		269F08121E84F7F1001EC0C7 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269F08101E84F7F1001EC0C7 /* RealmSwift.framework */; };
 		269F08151E84F805001EC0C7 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269F08131E84F805001EC0C7 /* Realm.framework */; };
 		269F08161E84F805001EC0C7 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269F08141E84F805001EC0C7 /* RealmSwift.framework */; };
+		26AF8BFE1EAF0A86005CF454 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26AF8BFC1EAF0A86005CF454 /* Nimble.framework */; };
+		26AF8BFF1EAF0A86005CF454 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26AF8BFD1EAF0A86005CF454 /* Quick.framework */; };
+		26AF8C001EAF0A92005CF454 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 26AF8BFC1EAF0A86005CF454 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		26AF8C011EAF0A92005CF454 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 26AF8BFD1EAF0A86005CF454 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		26AF8C041EAF0AA9005CF454 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26AF8C021EAF0AA9005CF454 /* Nimble.framework */; };
+		26AF8C051EAF0AA9005CF454 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26AF8C031EAF0AA9005CF454 /* Quick.framework */; };
+		26AF8C061EAF0AB0005CF454 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 26AF8C021EAF0AA9005CF454 /* Nimble.framework */; };
+		26AF8C071EAF0AB0005CF454 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 26AF8C031EAF0AA9005CF454 /* Quick.framework */; };
+		26AF8C0A1EAF0BBA005CF454 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26AF8C081EAF0BBA005CF454 /* Nimble.framework */; };
+		26AF8C0B1EAF0BBA005CF454 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26AF8C091EAF0BBA005CF454 /* Quick.framework */; };
+		26AF8C0C1EAF0BC2005CF454 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 26AF8C081EAF0BBA005CF454 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		26AF8C0D1EAF0BC2005CF454 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 26AF8C091EAF0BBA005CF454 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		52D6D9871BEFF229002C0205 /* RealmTxn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* RealmTxn.framework */; };
 		DD7502881C68FEDE006590AF /* RealmTxn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6DA0F1BF000BD002C0205 /* RealmTxn.framework */; };
 		DD7502921C690C7A006590AF /* RealmTxn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D9F01BEFFFBE002C0205 /* RealmTxn.framework */; };
@@ -86,6 +98,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				26AF8C001EAF0A92005CF454 /* Nimble.framework in CopyFiles */,
+				26AF8C011EAF0A92005CF454 /* Quick.framework in CopyFiles */,
 				E82833451EAE3FC40024D7FB /* Realm.framework in CopyFiles */,
 				E82833461EAE3FC40024D7FB /* RealmSwift.framework in CopyFiles */,
 			);
@@ -97,6 +111,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				26AF8C061EAF0AB0005CF454 /* Nimble.framework in CopyFiles */,
+				26AF8C071EAF0AB0005CF454 /* Quick.framework in CopyFiles */,
 				E828334D1EAE41580024D7FB /* Realm.framework in CopyFiles */,
 				E828334E1EAE41580024D7FB /* RealmSwift.framework in CopyFiles */,
 			);
@@ -108,6 +124,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				26AF8C0C1EAF0BC2005CF454 /* Nimble.framework in CopyFiles */,
+				26AF8C0D1EAF0BC2005CF454 /* Quick.framework in CopyFiles */,
 				E82833501EAE41750024D7FB /* Realm.framework in CopyFiles */,
 				E82833511EAE41750024D7FB /* RealmSwift.framework in CopyFiles */,
 			);
@@ -128,6 +146,12 @@
 		269F08101E84F7F1001EC0C7 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/watchOS/RealmSwift.framework; sourceTree = "<group>"; };
 		269F08131E84F805001EC0C7 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/tvOS/Realm.framework; sourceTree = "<group>"; };
 		269F08141E84F805001EC0C7 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/tvOS/RealmSwift.framework; sourceTree = "<group>"; };
+		26AF8BFC1EAF0A86005CF454 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		26AF8BFD1EAF0A86005CF454 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		26AF8C021EAF0AA9005CF454 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
+		26AF8C031EAF0AA9005CF454 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/Mac/Quick.framework; sourceTree = "<group>"; };
+		26AF8C081EAF0BBA005CF454 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/tvOS/Nimble.framework; sourceTree = "<group>"; };
+		26AF8C091EAF0BBA005CF454 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/tvOS/Quick.framework; sourceTree = "<group>"; };
 		52D6D97C1BEFF229002C0205 /* RealmTxn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RealmTxn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9861BEFF229002C0205 /* RealmTxn-iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RealmTxn-iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9E21BEFFF6E002C0205 /* RealmTxn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RealmTxn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,6 +179,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26AF8BFE1EAF0A86005CF454 /* Nimble.framework in Frameworks */,
+				26AF8BFF1EAF0A86005CF454 /* Quick.framework in Frameworks */,
 				2638BC8D1EA9A1D200E12297 /* Realm.framework in Frameworks */,
 				2638BC8E1EA9A1D200E12297 /* RealmSwift.framework in Frameworks */,
 				52D6D9871BEFF229002C0205 /* RealmTxn.framework in Frameworks */,
@@ -192,6 +218,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26AF8C041EAF0AA9005CF454 /* Nimble.framework in Frameworks */,
+				26AF8C051EAF0AA9005CF454 /* Quick.framework in Frameworks */,
 				2638BC901EA9A21D00E12297 /* Realm.framework in Frameworks */,
 				2638BC911EA9A21D00E12297 /* RealmSwift.framework in Frameworks */,
 				DD7502881C68FEDE006590AF /* RealmTxn.framework in Frameworks */,
@@ -202,6 +230,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26AF8C0A1EAF0BBA005CF454 /* Nimble.framework in Frameworks */,
+				26AF8C0B1EAF0BBA005CF454 /* Quick.framework in Frameworks */,
 				2638BC931EA9A23300E12297 /* Realm.framework in Frameworks */,
 				2638BC941EA9A23300E12297 /* RealmSwift.framework in Frameworks */,
 				DD7502921C690C7A006590AF /* RealmTxn.framework in Frameworks */,
@@ -226,6 +256,12 @@
 		269F08061E84F7D0001EC0C7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				26AF8C081EAF0BBA005CF454 /* Nimble.framework */,
+				26AF8C091EAF0BBA005CF454 /* Quick.framework */,
+				26AF8C021EAF0AA9005CF454 /* Nimble.framework */,
+				26AF8C031EAF0AA9005CF454 /* Quick.framework */,
+				26AF8BFC1EAF0A86005CF454 /* Nimble.framework */,
+				26AF8BFD1EAF0A86005CF454 /* Quick.framework */,
 				269F08131E84F805001EC0C7 /* Realm.framework */,
 				269F08141E84F805001EC0C7 /* RealmSwift.framework */,
 				269F080F1E84F7F1001EC0C7 /* Realm.framework */,
