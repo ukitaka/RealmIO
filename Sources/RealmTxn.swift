@@ -15,6 +15,10 @@ public struct RealmTxn<RW, T> {
         self._run = _run
     }
 
+    public init(error: Error) {
+        self._run = { _ in throw error }
+    }
+
     public func map<S>(_ f: @escaping (T) throws -> S) -> RealmTxn<RW, S> {
         return RealmTxn<RW, S> { realm in
             try f(self._run(realm))
