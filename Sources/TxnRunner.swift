@@ -10,11 +10,26 @@ import Foundation
 import RealmSwift
 
 public extension Realm {
-    public func runTxn<T>(txn: RealmReadTxn<T>) throws -> T {
+    @discardableResult
+    public func run<T>(txn: RealmReadTxn<T>) throws -> T {
         return try txn._run(self)
     }
 
-    public func runTxn<T>(txn: RealmWriteTxn<T>) throws -> T {
+    @discardableResult
+    public func run<T>(txn: RealmWriteTxn<T>) throws -> T {
         return try writeAndReturn { try txn._run(self) }
+    }
+}
+
+public extension Realm {
+    @discardableResult
+    public static func run<T>(txn: RealmReadTxn<T>) throws -> T {
+        return try txn._run(Realm())
+    }
+
+    @discardableResult
+    public static func run<T>(txn: RealmWriteTxn<T>) throws -> T {
+        let realm = try Realm()
+        return try realm.writeAndReturn { try txn._run(realm) }
     }
 }
