@@ -60,3 +60,30 @@ public extension RealmTxn where RW == Write {
         }
     }
 }
+
+// MARK: - Convert to WriteTxn
+
+public extension RealmTxn where RW == Read {
+    public var writeTxn: RealmWriteTxn<T> {
+        return flatMap { t in
+            RealmWriteTxn { realm in t }
+        }
+    }
+}
+
+// MARK: - modify
+
+public extension RealmTxn where T: Object, RW == Write {
+    public func modify(_ f: @escaping (T) -> ()) -> RealmWriteTxn<T> {
+        return self.map { (obj: T) -> T in
+            f(obj)
+            return obj
+        }
+    }
+}
+
+public extension RealmTxn where T: Object, RW == Read {
+    public func modify(_ f: @escaping (T) -> ()) -> RealmWriteTxn<T> {
+        return self.writeTxn.modify(f)
+    }
+}
