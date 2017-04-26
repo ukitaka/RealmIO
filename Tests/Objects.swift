@@ -12,6 +12,7 @@ import RealmTxn
 
 class Dog: Object {
     dynamic var name: String = ""
+    dynamic var age: Int = 0
 
     override class func primaryKey() -> String? {
         return "name"

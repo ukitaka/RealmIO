@@ -15,5 +15,13 @@ import Nimble
 class FlatMapSpec: QuickSpec {
     override func spec() {
         super.spec()
+        it("has everything you need to get started") {
+            let realm = try! Realm(configuration: Realm.Configuration(fileURL: nil, inMemoryIdentifier: "for test"))
+            let txn = Realm.TxnOps.create(Dog.self, value: ["name": "dog_name_1"])
+                .modify { dog in
+                    dog.age = 1
+                }
+            try! realm.run(txn: txn)
+        }
     }
 }
