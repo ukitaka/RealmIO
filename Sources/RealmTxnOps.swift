@@ -17,15 +17,27 @@ public extension Realm {
 // MARK: - Write
 
 public extension Realm.TxnOps {
-    public static func add(_ object: @escaping @autoclosure () -> Object, update: Bool = false) -> RealmWriteTxn<Void> {
+    public static func add(_ object: Object) -> RealmWriteTxn<Void> {
         return RealmWriteTxn<Void> { realm in
-            realm.add(object(), update: update)
+            realm.add(object)
         }
     }
 
-    public static func add<S>(_ objects: @escaping @autoclosure () -> S, update: Bool = false) -> RealmWriteTxn<Void> where S: Sequence, S.Iterator.Element: Object {
+    public static func add(_ object: Object, update: Bool) -> RealmWriteTxn<Void> {
         return RealmWriteTxn<Void> { realm in
-            realm.add(objects(), update: update)
+            realm.add(object, update: update)
+        }
+    }
+
+    public static func add<S>(_ objects: S) -> RealmWriteTxn<Void> where S: Sequence, S.Iterator.Element: Object {
+        return RealmWriteTxn<Void> { realm in
+            realm.add(objects)
+        }
+    }
+
+    public static func add<S>(_ objects: S, update: Bool) -> RealmWriteTxn<Void> where S: Sequence, S.Iterator.Element: Object {
+        return RealmWriteTxn<Void> { realm in
+            realm.add(objects, update: update)
         }
     }
     
@@ -94,9 +106,26 @@ public extension Realm.TxnOps {
     }
 }
 
-
-
 // MARK: - utils
+
+public extension Realm.TxnOps {
+    public static func unmanaged<T: Object>(_ type: T.Type) -> RealmWriteTxn<T> {
+        return RealmWriteTxn<T> { _ in
+            T()
+        }
+    }
+
+    public static func unmanaged<T: Object, S>(_ type: T.Type, primaryKey: S) -> RealmWriteTxn<T> {
+        return RealmWriteTxn<T> { _ in
+            guard let primaryKeyName = T.primaryKey() else {
+                return T()
+            }
+            let object = T()
+            object.setValue(primaryKey, forKey: primaryKeyName)
+            return object
+        }
+    }
+}
 
 public extension RealmTxn where T: Object {
     public static func object<K>(forPrimaryKey key: K) -> RealmReadTxn<T?> {
