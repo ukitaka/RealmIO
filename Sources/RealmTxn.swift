@@ -91,3 +91,25 @@ public extension RealmTxn where T: Object, RW == Read {
         return self.writeTxn.modify(f)
     }
 }
+
+// MARK: write or read
+
+public extension RealmTxn where RW == Read {
+    var isRead: Bool {
+        return true
+    }
+
+    var isWrite: Bool {
+        return false
+    }
+}
+
+public extension RealmTxn where RW == Write {
+    var isRead: Bool {
+        return false
+    }
+
+    var isWrite: Bool {
+        return true
+    }
+}
