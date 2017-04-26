@@ -17,11 +17,36 @@ class FlatMapSpec: QuickSpec {
 
     override func spec() {
         super.spec()
-        it("has everything you need to get started") {
+        it("should be `write` when compose `write` and `write`.") {
             let txn = Realm.TxnOps.unmanaged(Dog.self, primaryKey: "dog_name_1")
                 .modify { dog in dog.age = 1 }
                 .flatMap(Realm.TxnOps.add)
-            try! self.realm.run(txn: txn)
+
+            expect(txn.isWrite).to(be(true))
+        }
+
+        it("should be `write` when compose `read` and `write`.") {
+            let txn = Realm.TxnOps.object(ofType: Dog.self, forPrimaryKey: "dog_name_1")
+                .map  { $0! }
+                .flatMap(Realm.TxnOps.delete)
+
+            expect(txn.isWrite).to(be(true))
+        }
+
+        it("should be `write` when compose `write` and `read`.") {
+            let txn = Realm.TxnOps.unmanaged(Dog.self, primaryKey: "dog_name_1")
+                .modify { dog in dog.age = 1 }
+                .flatMap(Realm.TxnOps.add)
+                .flatMap { _ in Realm.TxnOps.object(ofType: Dog.self, forPrimaryKey: "dog_name_1") }
+
+            expect(txn.isWrite).to(be(true))
+        }
+
+        it("should be `read` when compose `read` and `read`.") {
+            let txn = Realm.TxnOps.objects(Dog.self)
+                .flatMap { _ in Realm.TxnOps.objects(Dog.self) }
+
+            expect(txn.isWrite).to(be(false))
         }
     }
 }
