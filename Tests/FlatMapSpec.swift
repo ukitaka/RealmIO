@@ -6,6 +6,7 @@
 //  Copyright © 2017年 waft. All rights reserved.
 //
 
+import RealmSwift
 import RealmTxn
 import XCTest
 import Quick
