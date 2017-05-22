@@ -18,3 +18,37 @@ class Dog: Object {
         return "name"
     }
 }
+
+extension Dog {
+    static var dogA: Dog {
+        let dog = Dog()
+        dog.age = 10
+        dog.name = "A"
+        return dog
+    }
+
+    static var dogB: Dog {
+        let dog = Dog()
+        dog.age = 11
+        dog.name = "B"
+        return dog
+    }
+
+    static var dogC: Dog {
+        let dog = Dog()
+        dog.age = 12
+        dog.name = "C"
+        return dog
+    }
+
+    static var dogD: Dog {
+        let dog = Dog()
+        dog.age = 13
+        dog.name = "D"
+        return dog
+    }
+
+    static var dogs: [Dog] {
+        return [dogA, dogB, dogC, dogD]
+    }
+}

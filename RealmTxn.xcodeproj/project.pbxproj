@@ -56,6 +56,9 @@
 		26AF8C0F1EAF2E77005CF454 /* CompositionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF8C0E1EAF2E77005CF454 /* CompositionSpec.swift */; };
 		26AF8C101EAF2E77005CF454 /* CompositionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF8C0E1EAF2E77005CF454 /* CompositionSpec.swift */; };
 		26AF8C111EAF2E77005CF454 /* CompositionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF8C0E1EAF2E77005CF454 /* CompositionSpec.swift */; };
+		26D923E81ED2E50200DB58ED /* BasicOperatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D923E71ED2E50200DB58ED /* BasicOperatorSpec.swift */; };
+		26D923E91ED2E50200DB58ED /* BasicOperatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D923E71ED2E50200DB58ED /* BasicOperatorSpec.swift */; };
+		26D923EA1ED2E50200DB58ED /* BasicOperatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D923E71ED2E50200DB58ED /* BasicOperatorSpec.swift */; };
 		52D6D9871BEFF229002C0205 /* RealmTxn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* RealmTxn.framework */; };
 		DD7502881C68FEDE006590AF /* RealmTxn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6DA0F1BF000BD002C0205 /* RealmTxn.framework */; };
 		DD7502921C690C7A006590AF /* RealmTxn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D9F01BEFFFBE002C0205 /* RealmTxn.framework */; };
@@ -161,6 +164,7 @@
 		26AF8C081EAF0BBA005CF454 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/tvOS/Nimble.framework; sourceTree = "<group>"; };
 		26AF8C091EAF0BBA005CF454 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/tvOS/Quick.framework; sourceTree = "<group>"; };
 		26AF8C0E1EAF2E77005CF454 /* CompositionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompositionSpec.swift; sourceTree = "<group>"; };
+		26D923E71ED2E50200DB58ED /* BasicOperatorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicOperatorSpec.swift; sourceTree = "<group>"; };
 		52D6D97C1BEFF229002C0205 /* RealmTxn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RealmTxn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9861BEFF229002C0205 /* RealmTxn-iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RealmTxn-iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9E21BEFFF6E002C0205 /* RealmTxn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RealmTxn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -289,6 +293,7 @@
 			children = (
 				E828333C1EAE3DD00024D7FB /* Objects.swift */,
 				26AF8C0E1EAF2E77005CF454 /* CompositionSpec.swift */,
+				26D923E71ED2E50200DB58ED /* BasicOperatorSpec.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -616,6 +621,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26AF8C0F1EAF2E77005CF454 /* CompositionSpec.swift in Sources */,
+				26D923E81ED2E50200DB58ED /* BasicOperatorSpec.swift in Sources */,
 				E828333D1EAE3DD00024D7FB /* Objects.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -664,6 +670,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26AF8C101EAF2E77005CF454 /* CompositionSpec.swift in Sources */,
+				26D923E91ED2E50200DB58ED /* BasicOperatorSpec.swift in Sources */,
 				E828333E1EAE3DD00024D7FB /* Objects.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -673,6 +680,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26AF8C111EAF2E77005CF454 /* CompositionSpec.swift in Sources */,
+				26D923EA1ED2E50200DB58ED /* BasicOperatorSpec.swift in Sources */,
 				E828333F1EAE3DD00024D7FB /* Objects.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
