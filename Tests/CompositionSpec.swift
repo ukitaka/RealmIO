@@ -1,5 +1,5 @@
 //
-//  FlatMapSpec.swift
+//  CompositionSpec.swift
 //  RealmTxn
 //
 //  Created by ukitaka on 2017/04/25.
@@ -12,7 +12,7 @@ import XCTest
 import Quick
 import Nimble
 
-class FlatMapSpec: QuickSpec {
+class CompositionSpec: QuickSpec {
     let realm = try! Realm(configuration: Realm.Configuration(fileURL: nil, inMemoryIdentifier: "for test"))
 
     override func spec() {
