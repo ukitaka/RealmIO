@@ -2,7 +2,7 @@
 //  BasicOperatorSpec.swift
 //  RealmTxn
 //
-//  Created by ST20841 on 2017/05/22.
+//  Created by ukitaka on 2017/05/22.
 //  Copyright © 2017年 waft. All rights reserved.
 //
 
@@ -33,6 +33,14 @@ class BasicOperatorSpec: QuickSpec {
 
                 expect(txn).to(beAnInstanceOf(RealmReadTxn<String>.self))
                 expect(result).to(equal("A"))
+            }
+
+            it("does not affect Read / Write type parameter") {
+                let readTxn = RealmReadTxn<Void> { _ in }
+                let writeTxn = RealmWriteTxn<Void> { _ in }
+
+               expect(readTxn.map(id).isRead).to(beTrue())
+               expect(writeTxn.map(id).isWrite).to(beTrue())
             }
         }
     }
