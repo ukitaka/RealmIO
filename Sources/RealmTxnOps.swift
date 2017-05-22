@@ -18,26 +18,40 @@ public extension Realm {
 
 public extension Realm.TxnOps {
     public static func add(_ object: Object) -> RealmWriteTxn<Void> {
+        let ref = ThreadSafeReference(to: object)
+
         return RealmWriteTxn<Void> { realm in
+            guard let object = realm.resolve(ref) else {
+                return // just return
+            }
             realm.add(object)
         }
     }
 
     public static func add(_ object: Object, update: Bool) -> RealmWriteTxn<Void> {
+        let ref = ThreadSafeReference(to: object)
+
         return RealmWriteTxn<Void> { realm in
+            guard let object = realm.resolve(ref) else {
+                return // just return
+            }
             realm.add(object, update: update)
         }
     }
 
     public static func add<S>(_ objects: S) -> RealmWriteTxn<Void> where S: Sequence, S.Iterator.Element: Object {
+        let refs = objects.map(ThreadSafeReference.init)
+
         return RealmWriteTxn<Void> { realm in
-            realm.add(objects)
+            realm.add(refs.flatMap(realm.resolve))
         }
     }
 
     public static func add<S>(_ objects: S, update: Bool) -> RealmWriteTxn<Void> where S: Sequence, S.Iterator.Element: Object {
+        let refs = objects.map(ThreadSafeReference.init)
+
         return RealmWriteTxn<Void> { realm in
-            realm.add(objects, update: update)
+            realm.add(refs.flatMap(realm.resolve), update: update)
         }
     }
     
@@ -54,26 +68,37 @@ public extension Realm.TxnOps {
     }
 
     public static func delete(_ object: Object) -> RealmWriteTxn<Void> {
+        let ref = ThreadSafeReference(to: object)
+
         return RealmWriteTxn<Void> { realm in
+            guard let object = realm.resolve(ref) else {
+                return // just return
+            }
             return realm.delete(object)
         }
     }
 
     public static func delete<S>(_ objects: S) -> RealmWriteTxn<Void> where S: Sequence, S.Iterator.Element: Object {
+        let refs = objects.map(ThreadSafeReference.init)
+
         return RealmWriteTxn<Void> { realm in
-            return realm.delete(objects)
+            return realm.delete(refs.flatMap(realm.resolve))
         }
     }
 
     public static func delete<T>(_ objects: List<T>) -> RealmWriteTxn<Void> where T: Object {
+        let refs = objects.map(ThreadSafeReference.init)
+
         return RealmWriteTxn<Void> { realm in
-            return realm.delete(objects)
+            return realm.delete(refs.flatMap(realm.resolve))
         }
     }
 
     public static func delete<T>(_ objects: Results<T>) -> RealmWriteTxn<Void> where T: Object {
+        let refs = objects.map(ThreadSafeReference.init)
+
         return RealmWriteTxn<Void> { realm in
-            return realm.delete(objects)
+            return realm.delete(refs.flatMap(realm.resolve))
         }
     }
 
