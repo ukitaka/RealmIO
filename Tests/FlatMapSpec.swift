@@ -17,36 +17,50 @@ class FlatMapSpec: QuickSpec {
 
     override func spec() {
         super.spec()
-        it("should be `write` when compose `write` and `write`.") {
-            let txn = Realm.TxnOps.unmanaged(Dog.self, primaryKey: "dog_name_1")
-                .modify { dog in dog.age = 1 }
-                .flatMap(Realm.TxnOps.add)
 
+        let readTxn = RealmReadTxn<Void> { _ in }
+        let writeTxn = RealmWriteTxn<Void> { _ in }
+        let readAnyTxn = AnyRealmTxn<Void>(txn: readTxn)
+        let writeAnyTxn = AnyRealmTxn<Void>(txn: writeTxn)
+
+        it("should be `write` when compose `write` and `write`.") {
+            let txn = writeTxn.flatMap { _ in writeTxn }
             expect(txn.isWrite).to(be(true))
         }
 
         it("should be `write` when compose `read` and `write`.") {
-            let txn = Realm.TxnOps.object(ofType: Dog.self, forPrimaryKey: "dog_name_1")
-                .map  { $0! }
-                .flatMap(Realm.TxnOps.delete)
-
+            let txn = readTxn.flatMap { _ in writeTxn }
             expect(txn.isWrite).to(be(true))
         }
 
         it("should be `write` when compose `write` and `read`.") {
-            let txn = Realm.TxnOps.unmanaged(Dog.self, primaryKey: "dog_name_1")
-                .modify { dog in dog.age = 1 }
-                .flatMap(Realm.TxnOps.add)
-                .flatMap { _ in Realm.TxnOps.object(ofType: Dog.self, forPrimaryKey: "dog_name_1") }
-
+            let txn = writeTxn.flatMap { _ in readTxn }
             expect(txn.isWrite).to(be(true))
         }
 
         it("should be `read` when compose `read` and `read`.") {
-            let txn = Realm.TxnOps.objects(Dog.self)
-                .flatMap { _ in Realm.TxnOps.objects(Dog.self) }
+            let txn = readTxn.flatMap { _ in readTxn }
+            expect(txn.isRead).to(be(true))
+        }
 
-            expect(txn.isWrite).to(be(false))
+        it("should be `read` when compose `any(read)` and `read`.") {
+            let txn = readAnyTxn.flatMap { _ in readTxn }
+            expect(txn.isRead).to(be(true))
+        }
+
+        it("should be `write` when compose `any(read)` and `write`.") {
+            let txn = readAnyTxn.flatMap { _ in writeTxn }
+            expect(txn.isWrite).to(be(true))
+        }
+
+        it("should be `write` when compose `any(write)` and `read`.") {
+            let txn = writeAnyTxn.flatMap { _ in readTxn }
+            expect(txn.isWrite).to(be(true))
+        }
+
+        it("should be `write` when compose `any(write)` and `write`.") {
+            let txn = writeAnyTxn.flatMap { _ in writeTxn }
+            expect(txn.isWrite).to(be(true))
         }
     }
 }
