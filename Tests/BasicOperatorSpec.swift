@@ -29,8 +29,9 @@ class BasicOperatorSpec: QuickSpec {
                 let txn = Realm.TxnOps
                     .object(ofType: Dog.self, forPrimaryKey: "A")
                     .map { $0?.name ?? "" }
-
                 let result = try! self.realm.run(txn: txn)
+
+                expect(txn).to(beAnInstanceOf(RealmReadTxn<String>.self))
                 expect(result).to(equal("A"))
             }
         }
