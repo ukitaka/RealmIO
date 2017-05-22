@@ -19,6 +19,15 @@ public extension Realm {
     public func run<T>(txn: RealmWriteTxn<T>) throws -> T {
         return try writeAndReturn { try txn._run(self) }
     }
+
+    @discardableResult
+    public func run<T>(txn: AnyRealmTxn<T>) throws -> T {
+        if txn.isWrite {
+            return try writeAndReturn { try txn._run(self) }
+        } else {
+            return try txn._run(self)
+        }
+    }
 }
 
 public extension Realm {
@@ -31,5 +40,15 @@ public extension Realm {
     public static func run<T>(txn: RealmWriteTxn<T>) throws -> T {
         let realm = try Realm()
         return try realm.writeAndReturn { try txn._run(realm) }
+    }
+
+    @discardableResult
+    public static func run<T>(txn: AnyRealmTxn<T>) throws -> T {
+        if txn.isWrite {
+            let realm = try Realm()
+            return try realm.writeAndReturn { try txn._run(realm) }
+        } else {
+            return try txn._run(Realm())
+        }
     }
 }
