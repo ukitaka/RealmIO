@@ -25,7 +25,7 @@ class BasicOperatorSpec: QuickSpec {
                 }
             }
 
-            it("should work with `map` operator") {
+            it("works well with `map` operator") {
                 let txn = Realm.TxnOps
                     .object(ofType: Dog.self, forPrimaryKey: "A")
                     .map { $0?.name ?? "" }
@@ -41,6 +41,22 @@ class BasicOperatorSpec: QuickSpec {
 
                expect(readTxn.map(id).isRead).to(beTrue())
                expect(writeTxn.map(id).isWrite).to(beTrue())
+            }
+        }
+
+        describe("`ask` operator") {
+            it("works well with `ask` operator") {
+                let txn = (RealmReadTxn<Void> { _ in }).ask()
+                expect(txn).to(beAnInstanceOf(RealmReadTxn<Realm>.self))
+                expect(try! self.realm.run(txn: txn)).to(be(self.realm))
+            }
+
+            it("does not affect Read / Write type parameter") {
+                let readTxn = RealmReadTxn<Void> { _ in }
+                let writeTxn = RealmWriteTxn<Void> { _ in }
+
+                expect(readTxn.ask().isRead).to(beTrue())
+                expect(writeTxn.ask().isWrite).to(beTrue())
             }
         }
     }
