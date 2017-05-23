@@ -125,5 +125,23 @@ class BasicOperatorSpec: QuickSpec {
                 }
             }
         }
+
+        describe("`isWrite` and `isRead` operator") {
+            context("`isWrite` and `isRead` operator in `Read` txn.") {
+                it("works well with `modify` operator") {
+                    let txn = RealmReadTxn<Void> { _ in }
+                    expect(txn.isRead).to(beTrue())
+                    expect(txn.isWrite).to(beFalse())
+                }
+            }
+
+            context("`isWrite` and `isRead` operator in `Write` txn.") {
+                it("works well with `modify` operator") {
+                    let txn = RealmWriteTxn<Void> { _ in }
+                    expect(txn.isRead).to(beFalse())
+                    expect(txn.isWrite).to(beTrue())
+                }
+            }
+        }
     }
 }
