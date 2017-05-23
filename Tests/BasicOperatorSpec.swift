@@ -85,5 +85,12 @@ class BasicOperatorSpec: QuickSpec {
                 expect(try! self.realm.run(txn: txn)).to(equal(18))
             }
         }
+
+        describe("`writeTxn` operator") {
+            it("works well with `writeTxn` operator") {
+                let readTxn = RealmReadTxn<Void> { _ in }
+                expect(readTxn.writeTxn).to(beAnInstanceOf(RealmWriteTxn<Void>.self))
+            }
+        }
     }
 }
