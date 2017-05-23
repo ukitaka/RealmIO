@@ -59,5 +59,31 @@ class BasicOperatorSpec: QuickSpec {
                 expect(writeTxn.ask().isWrite).to(beTrue())
             }
         }
+
+        describe("`flatMap` operator") {
+            beforeEach {
+                try! self.realm.write {
+                    self.realm.deleteAll()
+                    self.realm.add(Dog.dogs)
+                }
+            }
+
+            it("works well with `flatMap` operator") {
+                let readDogATxn = RealmReadTxn<Dog>.object(forPrimaryKey: "A").map { $0! }
+                
+                func modifyDogAgeTxn(dog: Dog) -> RealmWriteTxn<Dog> {
+                    return RealmWriteTxn<Dog> { realm in
+                        dog.age = 18
+                        return dog
+                    }
+                }
+
+                let txn = readDogATxn
+                    .flatMap(modifyDogAgeTxn)
+                    .map { $0.age }
+                
+                expect(try! self.realm.run(txn: txn)).to(equal(18))
+            }
+        }
     }
 }
