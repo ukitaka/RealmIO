@@ -92,5 +92,38 @@ class BasicOperatorSpec: QuickSpec {
                 expect(readTxn.writeTxn).to(beAnInstanceOf(RealmWriteTxn<Void>.self))
             }
         }
+
+        describe("`modify` operator") {
+            context("`modify` operator in `Read` txn.") {
+                it("works well with `modify` operator") {
+                    let readDogATxn = RealmReadTxn<Dog>
+                        .object(forPrimaryKey: "A")
+                        .map { $0! }
+                    
+                    let txn = readDogATxn.modify { $0.age = 18 }
+                    expect(txn).to(beAnInstanceOf(RealmWriteTxn<Dog>.self))
+                    expect(txn.isWrite).to(beTrue())
+
+                    let ageTxn = txn.map { $0.age }
+                    expect(try? self.realm.run(txn: ageTxn)).to(equal(18))
+                }
+            }
+
+            context("`modify` operator in `Write` txn.") {
+                it("works well with `modify` operator") {
+                    let writeDogATxn = RealmReadTxn<Dog>
+                        .object(forPrimaryKey: "A")
+                        .map { $0! }
+                        .writeTxn
+
+                    let txn = writeDogATxn.modify { $0.age = 19 }
+                    expect(txn).to(beAnInstanceOf(RealmWriteTxn<Dog>.self))
+                    expect(txn.isWrite).to(beTrue())
+
+                    let ageTxn = txn.map { $0.age }
+                    expect(try? self.realm.run(txn: ageTxn)).to(equal(19))
+                }
+            }
+        }
     }
 }
