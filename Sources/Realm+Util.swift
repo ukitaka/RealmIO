@@ -1,5 +1,5 @@
 //
-//  Realm+Extension.swift
+//  Realm+Util.swift
 //  RealmIO
 //
 //  Created by Yuki Takahashi on 2017/04/24.

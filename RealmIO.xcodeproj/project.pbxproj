@@ -9,16 +9,16 @@
 /* Begin PBXBuildFile section */
 		2638BC7D1EA9A14900E12297 /* ReadWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2638BC791EA9A14900E12297 /* ReadWrite.swift */; };
 		2638BC7F1EA9A14900E12297 /* RealmIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2638BC7B1EA9A14900E12297 /* RealmIO.swift */; };
-		2638BC801EA9A14900E12297 /* IORunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2638BC7C1EA9A14900E12297 /* IORunner.swift */; };
+		2638BC801EA9A14900E12297 /* Realm+Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2638BC7C1EA9A14900E12297 /* Realm+Run.swift */; };
 		2638BC811EA9A15500E12297 /* ReadWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2638BC791EA9A14900E12297 /* ReadWrite.swift */; };
 		2638BC831EA9A15500E12297 /* RealmIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2638BC7B1EA9A14900E12297 /* RealmIO.swift */; };
-		2638BC841EA9A15500E12297 /* IORunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2638BC7C1EA9A14900E12297 /* IORunner.swift */; };
+		2638BC841EA9A15500E12297 /* Realm+Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2638BC7C1EA9A14900E12297 /* Realm+Run.swift */; };
 		2638BC851EA9A15500E12297 /* ReadWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2638BC791EA9A14900E12297 /* ReadWrite.swift */; };
 		2638BC871EA9A15500E12297 /* RealmIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2638BC7B1EA9A14900E12297 /* RealmIO.swift */; };
-		2638BC881EA9A15500E12297 /* IORunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2638BC7C1EA9A14900E12297 /* IORunner.swift */; };
+		2638BC881EA9A15500E12297 /* Realm+Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2638BC7C1EA9A14900E12297 /* Realm+Run.swift */; };
 		2638BC891EA9A15600E12297 /* ReadWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2638BC791EA9A14900E12297 /* ReadWrite.swift */; };
 		2638BC8B1EA9A15600E12297 /* RealmIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2638BC7B1EA9A14900E12297 /* RealmIO.swift */; };
-		2638BC8C1EA9A15600E12297 /* IORunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2638BC7C1EA9A14900E12297 /* IORunner.swift */; };
+		2638BC8C1EA9A15600E12297 /* Realm+Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2638BC7C1EA9A14900E12297 /* Realm+Run.swift */; };
 		2638BC8D1EA9A1D200E12297 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269F08071E84F7D0001EC0C7 /* Realm.framework */; };
 		2638BC8E1EA9A1D200E12297 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269F08081E84F7D0001EC0C7 /* RealmSwift.framework */; };
 		2638BC901EA9A21D00E12297 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269F080B1E84F7E2001EC0C7 /* Realm.framework */; };
@@ -65,15 +65,15 @@
 		52D6D9871BEFF229002C0205 /* RealmIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* RealmIO.framework */; };
 		DD7502881C68FEDE006590AF /* RealmIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6DA0F1BF000BD002C0205 /* RealmIO.framework */; };
 		DD7502921C690C7A006590AF /* RealmIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D9F01BEFFFBE002C0205 /* RealmIO.framework */; };
-		E828333B1EAE34630024D7FB /* Realm+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E828333A1EAE34630024D7FB /* Realm+Extension.swift */; };
+		E828333B1EAE34630024D7FB /* Realm+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = E828333A1EAE34630024D7FB /* Realm+Util.swift */; };
 		E828333D1EAE3DD00024D7FB /* Objects.swift in Sources */ = {isa = PBXBuildFile; fileRef = E828333C1EAE3DD00024D7FB /* Objects.swift */; };
 		E828333E1EAE3DD00024D7FB /* Objects.swift in Sources */ = {isa = PBXBuildFile; fileRef = E828333C1EAE3DD00024D7FB /* Objects.swift */; };
 		E828333F1EAE3DD00024D7FB /* Objects.swift in Sources */ = {isa = PBXBuildFile; fileRef = E828333C1EAE3DD00024D7FB /* Objects.swift */; };
 		E82833451EAE3FC40024D7FB /* Realm.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 269F08071E84F7D0001EC0C7 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E82833461EAE3FC40024D7FB /* RealmSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 269F08081E84F7D0001EC0C7 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E82833491EAE408E0024D7FB /* Realm+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E828333A1EAE34630024D7FB /* Realm+Extension.swift */; };
-		E828334A1EAE408E0024D7FB /* Realm+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E828333A1EAE34630024D7FB /* Realm+Extension.swift */; };
-		E828334B1EAE408F0024D7FB /* Realm+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E828333A1EAE34630024D7FB /* Realm+Extension.swift */; };
+		E82833491EAE408E0024D7FB /* Realm+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = E828333A1EAE34630024D7FB /* Realm+Util.swift */; };
+		E828334A1EAE408E0024D7FB /* Realm+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = E828333A1EAE34630024D7FB /* Realm+Util.swift */; };
+		E828334B1EAE408F0024D7FB /* Realm+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = E828333A1EAE34630024D7FB /* Realm+Util.swift */; };
 		E828334D1EAE41580024D7FB /* Realm.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 269F080B1E84F7E2001EC0C7 /* Realm.framework */; };
 		E828334E1EAE41580024D7FB /* RealmSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 269F080C1E84F7E2001EC0C7 /* RealmSwift.framework */; };
 		E82833501EAE41750024D7FB /* Realm.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 269F08131E84F805001EC0C7 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -149,7 +149,7 @@
 /* Begin PBXFileReference section */
 		2638BC791EA9A14900E12297 /* ReadWrite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadWrite.swift; sourceTree = "<group>"; };
 		2638BC7B1EA9A14900E12297 /* RealmIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmIO.swift; sourceTree = "<group>"; };
-		2638BC7C1EA9A14900E12297 /* IORunner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IORunner.swift; sourceTree = "<group>"; };
+		2638BC7C1EA9A14900E12297 /* Realm+Run.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Realm+Run.swift"; sourceTree = "<group>"; };
 		2638BC981EADF9EF00E12297 /* Realm+Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Realm+Operator.swift"; sourceTree = "<group>"; };
 		264784F01EC40D5C00A9AE1D /* AnyRealmIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyRealmIO.swift; sourceTree = "<group>"; };
 		269F08071E84F7D0001EC0C7 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
@@ -178,7 +178,7 @@
 		AD2FAA281CD0B6E100659CF4 /* RealmIOTests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = RealmIOTests.plist; sourceTree = "<group>"; };
 		DD75027A1C68FCFC006590AF /* RealmIO-macOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RealmIO-macOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD75028D1C690C7A006590AF /* RealmIO-tvOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RealmIO-tvOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E828333A1EAE34630024D7FB /* Realm+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Realm+Extension.swift"; sourceTree = "<group>"; };
+		E828333A1EAE34630024D7FB /* Realm+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Realm+Util.swift"; sourceTree = "<group>"; };
 		E828333C1EAE3DD00024D7FB /* Objects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Objects.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -264,8 +264,8 @@
 				2638BC791EA9A14900E12297 /* ReadWrite.swift */,
 				2638BC7B1EA9A14900E12297 /* RealmIO.swift */,
 				2638BC981EADF9EF00E12297 /* Realm+Operator.swift */,
-				2638BC7C1EA9A14900E12297 /* IORunner.swift */,
-				E828333A1EAE34630024D7FB /* Realm+Extension.swift */,
+				2638BC7C1EA9A14900E12297 /* Realm+Run.swift */,
+				E828333A1EAE34630024D7FB /* Realm+Util.swift */,
 				264784F01EC40D5C00A9AE1D /* AnyRealmIO.swift */,
 			);
 			path = Sources;
@@ -614,9 +614,9 @@
 			files = (
 				2638BC991EADF9EF00E12297 /* Realm+Operator.swift in Sources */,
 				2638BC7D1EA9A14900E12297 /* ReadWrite.swift in Sources */,
-				2638BC801EA9A14900E12297 /* IORunner.swift in Sources */,
+				2638BC801EA9A14900E12297 /* Realm+Run.swift in Sources */,
 				264784F11EC40D5C00A9AE1D /* AnyRealmIO.swift in Sources */,
-				E828333B1EAE34630024D7FB /* Realm+Extension.swift in Sources */,
+				E828333B1EAE34630024D7FB /* Realm+Util.swift in Sources */,
 				2638BC7F1EA9A14900E12297 /* RealmIO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -638,9 +638,9 @@
 			files = (
 				2638BC9B1EAE026100E12297 /* Realm+Operator.swift in Sources */,
 				2638BC851EA9A15500E12297 /* ReadWrite.swift in Sources */,
-				2638BC881EA9A15500E12297 /* IORunner.swift in Sources */,
+				2638BC881EA9A15500E12297 /* Realm+Run.swift in Sources */,
 				264784F31EC40D5C00A9AE1D /* AnyRealmIO.swift in Sources */,
-				E828334A1EAE408E0024D7FB /* Realm+Extension.swift in Sources */,
+				E828334A1EAE408E0024D7FB /* Realm+Util.swift in Sources */,
 				2638BC871EA9A15500E12297 /* RealmIO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -651,9 +651,9 @@
 			files = (
 				2638BC9A1EAE026100E12297 /* Realm+Operator.swift in Sources */,
 				2638BC891EA9A15600E12297 /* ReadWrite.swift in Sources */,
-				2638BC8C1EA9A15600E12297 /* IORunner.swift in Sources */,
+				2638BC8C1EA9A15600E12297 /* Realm+Run.swift in Sources */,
 				264784F41EC40D5C00A9AE1D /* AnyRealmIO.swift in Sources */,
-				E82833491EAE408E0024D7FB /* Realm+Extension.swift in Sources */,
+				E82833491EAE408E0024D7FB /* Realm+Util.swift in Sources */,
 				2638BC8B1EA9A15600E12297 /* RealmIO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -664,9 +664,9 @@
 			files = (
 				2638BC9C1EAE026200E12297 /* Realm+Operator.swift in Sources */,
 				2638BC811EA9A15500E12297 /* ReadWrite.swift in Sources */,
-				2638BC841EA9A15500E12297 /* IORunner.swift in Sources */,
+				2638BC841EA9A15500E12297 /* Realm+Run.swift in Sources */,
 				264784F21EC40D5C00A9AE1D /* AnyRealmIO.swift in Sources */,
-				E828334B1EAE408F0024D7FB /* Realm+Extension.swift in Sources */,
+				E828334B1EAE408F0024D7FB /* Realm+Util.swift in Sources */,
 				2638BC831EA9A15500E12297 /* RealmIO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
