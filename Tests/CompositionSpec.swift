@@ -18,49 +18,49 @@ class CompositionSpec: QuickSpec {
     override func spec() {
         super.spec()
 
-        let readTxn = RealmRead<Void> { _ in }
-        let writeTxn = RealmWrite<Void> { _ in }
-        let readAnyTxn = AnyRealmIO<Void>(txn: readTxn)
-        let writeAnyTxn = AnyRealmIO<Void>(txn: writeTxn)
+        let readIO = RealmRead<Void> { _ in }
+        let writeIO = RealmWrite<Void> { _ in }
+        let readAnyIO = AnyRealmIO<Void>(io: readIO)
+        let writeAnyIO = AnyRealmIO<Void>(io: writeIO)
 
         it("should be `write` when compose `write` and `write`.") {
-            let txn = writeTxn.flatMap { _ in writeTxn }
-            expect(txn.isWrite).to(beTrue())
+            let io = writeIO.flatMap { _ in writeIO }
+            expect(io.isWrite).to(beTrue())
         }
 
         it("should be `write` when compose `read` and `write`.") {
-            let txn = readTxn.flatMap { _ in writeTxn }
-            expect(txn.isWrite).to(beTrue())
+            let io = readIO.flatMap { _ in writeIO }
+            expect(io.isWrite).to(beTrue())
         }
 
         it("should be `write` when compose `write` and `read`.") {
-            let txn = writeTxn.flatMap { _ in readTxn }
-            expect(txn.isWrite).to(beTrue())
+            let io = writeIO.flatMap { _ in readIO }
+            expect(io.isWrite).to(beTrue())
         }
 
         it("should be `read` when compose `read` and `read`.") {
-            let txn = readTxn.flatMap { _ in readTxn }
-            expect(txn.isRead).to(beTrue())
+            let io = readIO.flatMap { _ in readIO }
+            expect(io.isRead).to(beTrue())
         }
 
         it("should be `read` when compose `any(read)` and `read`.") {
-            let txn = readAnyTxn.flatMap { _ in readTxn }
-            expect(txn.isRead).to(beTrue())
+            let io = readAnyIO.flatMap { _ in readIO }
+            expect(io.isRead).to(beTrue())
         }
 
         it("should be `write` when compose `any(read)` and `write`.") {
-            let txn = readAnyTxn.flatMap { _ in writeTxn }
-            expect(txn.isWrite).to(beTrue())
+            let io = readAnyIO.flatMap { _ in writeIO }
+            expect(io.isWrite).to(beTrue())
         }
 
         it("should be `write` when compose `any(write)` and `read`.") {
-            let txn = writeAnyTxn.flatMap { _ in readTxn }
-            expect(txn.isWrite).to(beTrue())
+            let io = writeAnyIO.flatMap { _ in readIO }
+            expect(io.isWrite).to(beTrue())
         }
 
         it("should be `write` when compose `any(write)` and `write`.") {
-            let txn = writeAnyTxn.flatMap { _ in writeTxn }
-            expect(txn.isWrite).to(beTrue())
+            let io = writeAnyIO.flatMap { _ in writeIO }
+            expect(io.isWrite).to(beTrue())
         }
     }
 }

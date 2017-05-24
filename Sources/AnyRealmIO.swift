@@ -17,13 +17,13 @@ public struct AnyRealmIO<T> {
         return !isRead
     }
 
-    public init(txn: RealmIO<Read, T>) {
-        self._run = txn._run
+    public init(io: RealmIO<Read, T>) {
+        self._run = io._run
         self.isRead = true
     }
 
-    public init(txn: RealmIO<Write, T>) {
-        self._run = txn._run
+    public init(io: RealmIO<Write, T>) {
+        self._run = io._run
         self.isRead = false
     }
 

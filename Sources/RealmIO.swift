@@ -68,7 +68,7 @@ public extension RealmIO where RW == Write {
 // MARK: - Convert to WriteTxn
 
 public extension RealmIO where RW == Read {
-    public var writeTxn: RealmWrite<T> {
+    public var writeIO: RealmWrite<T> {
         return flatMap { t in
             RealmWrite { realm in t }
         }
@@ -88,7 +88,7 @@ public extension RealmIO where T: Object, RW == Write {
 
 public extension RealmIO where T: Object, RW == Read {
     public func modify(_ f: @escaping (T) -> ()) -> RealmWrite<T> {
-        return self.writeTxn.modify(f)
+        return self.writeIO.modify(f)
     }
 }
 
