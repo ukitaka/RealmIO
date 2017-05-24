@@ -1,6 +1,6 @@
 //
 //  Objects.swift
-//  RealmTxn
+//  RealmIO
 //
 //  Created by Yuki Takahashi on 2017/04/24.
 //  Copyright © 2017年 waft. All rights reserved.
@@ -8,7 +8,7 @@
 
 import Foundation
 import RealmSwift
-import RealmTxn
+import RealmIO
 
 class Dog: Object {
     dynamic var name: String = ""

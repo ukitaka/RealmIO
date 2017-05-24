@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "52D6D97B1BEFF229002C0205"
-               BuildableName = "RealmTxn.framework"
-               BlueprintName = "RealmTxn-iOS"
-               ReferencedContainer = "container:RealmTxn.xcodeproj">
+               BuildableName = "RealmIO.framework"
+               BlueprintName = "RealmIO-iOS"
+               ReferencedContainer = "container:RealmIO.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,9 +34,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "52D6D9851BEFF229002C0205"
-               BuildableName = "RealmTxn-iOS Tests.xctest"
-               BlueprintName = "RealmTxn-iOS Tests"
-               ReferencedContainer = "container:RealmTxn.xcodeproj">
+               BuildableName = "RealmIO-iOS Tests.xctest"
+               BlueprintName = "RealmIO-iOS Tests"
+               ReferencedContainer = "container:RealmIO.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -44,9 +44,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "52D6D97B1BEFF229002C0205"
-            BuildableName = "RealmTxn.framework"
-            BlueprintName = "RealmTxn-iOS"
-            ReferencedContainer = "container:RealmTxn.xcodeproj">
+            BuildableName = "RealmIO.framework"
+            BlueprintName = "RealmIO-iOS"
+            ReferencedContainer = "container:RealmIO.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -66,9 +66,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "52D6D97B1BEFF229002C0205"
-            BuildableName = "RealmTxn.framework"
-            BlueprintName = "RealmTxn-iOS"
-            ReferencedContainer = "container:RealmTxn.xcodeproj">
+            BuildableName = "RealmIO.framework"
+            BlueprintName = "RealmIO-iOS"
+            ReferencedContainer = "container:RealmIO.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -84,9 +84,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "52D6D97B1BEFF229002C0205"
-            BuildableName = "RealmTxn.framework"
-            BlueprintName = "RealmTxn-iOS"
-            ReferencedContainer = "container:RealmTxn.xcodeproj">
+            BuildableName = "RealmIO.framework"
+            BlueprintName = "RealmIO-iOS"
+            ReferencedContainer = "container:RealmIO.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

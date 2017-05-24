@@ -1,13 +1,13 @@
 //
 //  CompositionSpec.swift
-//  RealmTxn
+//  RealmIO
 //
 //  Created by ukitaka on 2017/04/25.
 //  Copyright © 2017年 waft. All rights reserved.
 //
 
 import RealmSwift
-import RealmTxn
+import RealmIO
 import XCTest
 import Quick
 import Nimble
@@ -18,10 +18,10 @@ class CompositionSpec: QuickSpec {
     override func spec() {
         super.spec()
 
-        let readTxn = RealmReadTxn<Void> { _ in }
-        let writeTxn = RealmWriteTxn<Void> { _ in }
-        let readAnyTxn = AnyRealmTxn<Void>(txn: readTxn)
-        let writeAnyTxn = AnyRealmTxn<Void>(txn: writeTxn)
+        let readTxn = RealmRead<Void> { _ in }
+        let writeTxn = RealmWrite<Void> { _ in }
+        let readAnyTxn = AnyRealmIO<Void>(txn: readTxn)
+        let writeAnyTxn = AnyRealmIO<Void>(txn: writeTxn)
 
         it("should be `write` when compose `write` and `write`.") {
             let txn = writeTxn.flatMap { _ in writeTxn }

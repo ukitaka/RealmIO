@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "52D6D9E11BEFFF6E002C0205"
-               BuildableName = "RealmTxn.framework"
-               BlueprintName = "RealmTxn-watchOS"
-               ReferencedContainer = "container:RealmTxn.xcodeproj">
+               BuildableName = "RealmIO.framework"
+               BlueprintName = "RealmIO-watchOS"
+               ReferencedContainer = "container:RealmIO.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "52D6D9E11BEFFF6E002C0205"
-            BuildableName = "RealmTxn.framework"
-            BlueprintName = "RealmTxn-watchOS"
-            ReferencedContainer = "container:RealmTxn.xcodeproj">
+            BuildableName = "RealmIO.framework"
+            BlueprintName = "RealmIO-watchOS"
+            ReferencedContainer = "container:RealmIO.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -65,9 +65,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "52D6D9E11BEFFF6E002C0205"
-            BuildableName = "RealmTxn.framework"
-            BlueprintName = "RealmTxn-watchOS"
-            ReferencedContainer = "container:RealmTxn.xcodeproj">
+            BuildableName = "RealmIO.framework"
+            BlueprintName = "RealmIO-watchOS"
+            ReferencedContainer = "container:RealmIO.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

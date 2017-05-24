@@ -1,6 +1,6 @@
 //
-//  AnyRealmTxn.swift
-//  RealmTxn
+//  AnyRealmIO.swift
+//  RealmIO
 //
 //  Created by ukitaka on 2017/05/11.
 //  Copyright © 2017年 waft. All rights reserved.
@@ -8,7 +8,7 @@
 
 import RealmSwift
 
-public struct AnyRealmTxn<T> {
+public struct AnyRealmIO<T> {
     internal let _run: (Realm) throws -> T
 
     public let isRead: Bool
@@ -17,12 +17,12 @@ public struct AnyRealmTxn<T> {
         return !isRead
     }
 
-    public init(txn: RealmTxn<Read, T>) {
+    public init(txn: RealmIO<Read, T>) {
         self._run = txn._run
         self.isRead = true
     }
 
-    public init(txn: RealmTxn<Write, T>) {
+    public init(txn: RealmIO<Write, T>) {
         self._run = txn._run
         self.isRead = false
     }
@@ -37,26 +37,26 @@ public struct AnyRealmTxn<T> {
         self.isRead = true
     }
 
-    public func map<S>(_ f: @escaping (T) throws -> S) -> AnyRealmTxn<S> {
-        return AnyRealmTxn<S>(isRead: isRead) { realm in
+    public func map<S>(_ f: @escaping (T) throws -> S) -> AnyRealmIO<S> {
+        return AnyRealmIO<S>(isRead: isRead) { realm in
             try f(self._run(realm))
         }
     }
 
-    public func flatMap<S>(_ f: @escaping (T) throws -> RealmWriteTxn<S>) -> RealmWriteTxn<S> {
-        return RealmWriteTxn<S> { realm in
+    public func flatMap<S>(_ f: @escaping (T) throws -> RealmWrite<S>) -> RealmWrite<S> {
+        return RealmWrite<S> { realm in
             try f(self._run(realm))._run(realm)
         }
     }
 
-    public func flatMap<S>(_ f: @escaping (T) throws -> RealmReadTxn<S>) -> AnyRealmTxn<S> {
-        return AnyRealmTxn<S>(isRead: isRead) { realm in
+    public func flatMap<S>(_ f: @escaping (T) throws -> RealmRead<S>) -> AnyRealmIO<S> {
+        return AnyRealmIO<S>(isRead: isRead) { realm in
             try f(self._run(realm))._run(realm)
         }
     }
 
-    public func ask() -> AnyRealmTxn<Realm> {
-        return AnyRealmTxn <Realm>(isRead: isRead) { realm in
+    public func ask() -> AnyRealmIO<Realm> {
+        return AnyRealmIO <Realm>(isRead: isRead) { realm in
             return realm
         }
     }
