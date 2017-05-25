@@ -1,8 +1,10 @@
 # RealmIO
 
-`RealmIO` makes `Realm` type-safely and composable by using `reader monad`.
+`RealmIO` makes `Realm` more safely, reusable and composable by using `reader monad`.
 
 ## Usage
+
+### Define Realm action as `RealmIO`
 
 `RealmIO<RW, T>` represents a realm action.
 
@@ -25,4 +27,66 @@ func find(by userID: Int) -> RealmRead<User> {
 }
 ```
 
-TODO...
+### Run Realm action with `realm.run(io:)`
+
+You can run preceding realm action with `realm.run(io:)`.
+
+```swift
+let io: RealmRead<User> = find(by: 123)
+let result = try? realm.run(io: io)
+```
+
+If action needs to write to realm (it means `io` is an instance of `RealmWrite<T>`),
+`realm.run(io:)` begins transaction automatically.
+
+### Compose realm action with `flatMap`
+
+`flatMap` allows you to compose realm actions.
+
+```swift
+func add(dog: Dog) -> RealmWrite<Void> {
+    ...
+}
+
+func add(cat: Cat) -> RealmWrite<Void> {
+    ...
+}
+
+let io: RealmWrite<Void> = add(dog: myDog).flatMap { _ in add(cat: myCat) }
+```
+
+And you can run composed action **in a same transaction**.
+
+```swift
+realm.run(io: io) // Add `myDog` and `myCat` in a same transaction.
+```
+
+(TODO)
+
+
+## Installation
+
+### CocoaPods
+
+```
+pod 'RealmIO'
+```
+
+### Carthage
+
+```
+github "ukitaka/RealmIO"
+```
+
+## Requirements
+
+`RealmIO` uses swift 3.1 functionality, support only swift 3.1 now.
+
++ Xcode 8.3
++ swift 3.1
+
++ iOS 8.0+
++ macOS 10.10+
++ watchOS 2.0+
++ tvOS 9.0+
+
