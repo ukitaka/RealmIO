@@ -1,3 +1,6 @@
+
+⚠️ This library is still under construction ⚠️
+
 # RealmIO
 
 `RealmIO` makes `Realm` more safely, reusable and composable by using `reader monad`.
