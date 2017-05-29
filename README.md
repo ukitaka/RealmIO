@@ -7,11 +7,11 @@
 
 ## Usage
 
-### Define Realm action as `RealmIO`
+### Define Realm operation as `RealmIO`
 
-`RealmIO<RW, T>` represents a realm action.
+`RealmIO<RW, T>` represents a realm operation.
 
-+ `RW` is actually `Read` or `Write`. It represents that action is readonly or not.
++ `RW` is actually `Read` or `Write`. It represents that operation is readonly or not.
 + `T` is a return value type.
 
 and you can also use `RealmRead<T>` and `RealmWrite<T>`, these are just alias of `RealmIO<Read, T>` and `RealmIO<Write, T>` .
@@ -22,7 +22,7 @@ public typealias RealmRead<T> = RealmIO<Read, T>
 public typealias RealmWrite<T> = RealmIO<Write, T>
 ```
 
-For example, action that reads `User` object from realm is typed `RealmRead<User>`.
+For example, operation that reads `User` object from realm is typed `RealmRead<User>`.
 
 ```swift
 func find(by userID: Int) -> RealmRead<User> {
@@ -30,19 +30,19 @@ func find(by userID: Int) -> RealmRead<User> {
 }
 ```
 
-### Run Realm action with `realm.run(io:)`
+### Run Realm operation with `realm.run(io:)`
 
-You can run preceding realm action with `realm.run(io:)`.
+You can run preceding realm operation with `realm.run(io:)`.
 
 ```swift
 let io: RealmRead<User> = find(by: 123)
 let result = try? realm.run(io: io)
 ```
 
-If action needs to write to realm (it means `io` is an instance of `RealmWrite<T>`),
+If operation needs to write to realm (it means `io` is an instance of `RealmWrite<T>`),
 `realm.run(io:)` begins transaction automatically.
 
-### Compose realm action with `flatMap`
+### Compose realm operation with `flatMap`
 
 `flatMap` allows you to compose realm actions.
 
@@ -58,7 +58,7 @@ func add(cat: Cat) -> RealmWrite<Void> {
 let io: RealmWrite<Void> = add(dog: myDog).flatMap { _ in add(cat: myCat) }
 ```
 
-And you can run composed action **in a same transaction**.
+And you can run composed operation **in a same transaction**.
 
 ```swift
 realm.run(io: io) // Add `myDog` and `myCat` in a same transaction.
