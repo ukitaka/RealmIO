@@ -83,10 +83,14 @@ github "ukitaka/RealmIO"
 
 ## Requirements
 
-`RealmIO` uses swift 3.1 functionality, support only swift 3.1 now.
+`RealmIO` uses swift 3.1 functionality, so support only swift 3.1 now.
+And also uses `TreadsafeReference` functionality, it requires `RealmSwift ~> v2.2.0`
 
 + Xcode 8.3
 + swift 3.1
++ RealmSwift v2.2.0 or later
+
+`RealmIO` supports following platforms.
 
 + iOS 8.0+
 + macOS 10.10+
