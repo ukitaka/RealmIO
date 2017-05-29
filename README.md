@@ -3,7 +3,7 @@
 
 # RealmIO
 
-`RealmIO` makes `Realm` more safely, reusable and composable by using `reader monad`.
+`RealmIO` makes `Realm` operation more safely, reusable and composable by using `reader monad`.
 
 ## Motivation
 
