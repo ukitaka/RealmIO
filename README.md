@@ -7,7 +7,7 @@
 
 ## Motivation
 
-Realm operations (especially `write` operations) is not reusable if you write a function such as
+Realm operations (especially `write` operations) is not reusable if you write a function as follows:
 
 ```swift
 func addDog(name: String) throws {
