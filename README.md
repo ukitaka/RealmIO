@@ -5,6 +5,35 @@
 
 `RealmIO` makes `Realm` more safely, reusable and composable by using `reader monad`.
 
+## Motivation
+
+Realm operations (especially `write` operations) is not reusable if you write a function such as
+
+```swift
+func addDog(name: String) throws {
+    let realm = try Realm()
+    try realm.write {
+        let dog = Dog()
+        dog.name = name
+        realm.add(dog)
+    }
+}
+``` 
+
+At first glance, It works well, but actually there are some problems if you call this function multiple times.
+
+```swift
+addDog(name: "Taro")
+addDog(name: "Jiro")
+```
+
++ You cannot add 2 dog objects in a same transaction. In this case, `realm.write` is called twice.
++ Typically, to begin transaction is very slow, and `realm.write` locks realm instance.  We should not call `realm.write` needlessly.
+
+![img](https://camo.githubusercontent.com/80325b8b7b367979e13528536fa036d5ef1c0d4f/68747470733a2f2f696d672e6573612e696f2f75706c6f6164732f70726f64756374696f6e2f6174746163686d656e74732f323234352f323031372f30352f32362f323838342f39343761326530392d343738662d343161622d616330302d3864663162393331383635612e706e67) ![img](https://camo.githubusercontent.com/3d48d89d7b463f885bb3ae39bfacf85c1851e174/68747470733a2f2f696d672e6573612e696f2f75706c6f6164732f70726f64756374696f6e2f6174746163686d656e74732f323234352f323031372f30352f32362f323838342f35663730353930362d393833622d343364312d396662622d3165303333616338336138392e706e67)
+
+(TODO)
+
 ## Usage
 
 ### Define Realm operation as `RealmIO`
