@@ -112,13 +112,18 @@ And you can run composed operation **in a same transaction**.
 realm.run(io: io) // Add `myDog` and `myCat` in a same transaction.
 ```
 
-`RW` type parameter of composed operation is determined by 2 operations types.
+`RW` type parameter of composed operation is determined by 2 operation types.
 ```swift
 read.flatMap { _ in read }   // Read
 read.flatMap { _ in write }  // Write
 write.flatMap { _ in read }  // Write
 write.flatMap { _ in write } // Write
 ```
+
+### Use convenient operator
+
+`Realm.IO` provides useful operators to create `RealmIO` instance.
+See:  [Realm+Operator.swift](https://github.com/ukitaka/RealmIO/blob/master/Sources/Realm%2BOperator.swift)
 
 
 ## Installation
