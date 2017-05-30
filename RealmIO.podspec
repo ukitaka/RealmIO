@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
   s.version      = "1.0"
   s.summary      = ""
   s.description  = <<-DESC
-    Your description here.
+  RealmIO makes Realm operation more safely, reusable and composable by using reader monad.
   DESC
   s.homepage     = "https://github.com/ukitaka/RealmIO"
   s.license      = { :type => "MIT", :file => "LICENSE" }
