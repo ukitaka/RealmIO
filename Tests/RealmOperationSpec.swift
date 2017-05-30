@@ -17,5 +17,19 @@ class RealmOperationSpec: QuickSpec {
 
     override func spec() {
         super.spec()
+
+        describe("`add` operator") {
+            it ("works well") {
+                let dog = Dog()
+                dog.name = "Taro"
+                dog.age = 4
+                let addTaro = Realm.IO.add(dog)
+                try! self.realm.run(io: addTaro)
+                let readTaro = RealmRead<Dog>.object(forPrimaryKey: "Taro")
+                let result = try! self.realm.run(io: readTaro)
+                expect(result?.name).to(equal("Taro"))
+                expect(result?.age).to(equal(4))
+            }
+        }
     }
 }

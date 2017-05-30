@@ -18,6 +18,10 @@ public extension Realm {
 
 public extension Realm.IO {
     public static func add(_ object: Object) -> RealmWrite<Void> {
+        guard object.realm != nil else {
+            return RealmWrite<Void> { realm in realm.add(object) }
+        }
+
         let ref = ThreadSafeReference(to: object)
 
         return RealmWrite<Void> { realm in
@@ -29,6 +33,10 @@ public extension Realm.IO {
     }
 
     public static func add(_ object: Object, update: Bool) -> RealmWrite<Void> {
+        guard object.realm != nil else {
+            return RealmWrite<Void> { realm in realm.add(object, update: update) }
+        }
+
         let ref = ThreadSafeReference(to: object)
 
         return RealmWrite<Void> { realm in
@@ -40,6 +48,12 @@ public extension Realm.IO {
     }
 
     public static func add<S>(_ objects: S) -> RealmWrite<Void> where S: Sequence, S.Iterator.Element: Object {
+        let unmanaged: Bool = objects.contains { $0.realm == nil }
+
+        guard unmanaged == false else {
+            return RealmWrite<Void> { realm in realm.add(objects) }
+        }
+
         let refs = objects.map(ThreadSafeReference.init)
 
         return RealmWrite<Void> { realm in
@@ -48,6 +62,12 @@ public extension Realm.IO {
     }
 
     public static func add<S>(_ objects: S, update: Bool) -> RealmWrite<Void> where S: Sequence, S.Iterator.Element: Object {
+        let unmanaged: Bool = objects.contains { $0.realm == nil }
+
+        guard unmanaged == false else {
+            return RealmWrite<Void> { realm in realm.add(objects, update: update) }
+        }
+
         let refs = objects.map(ThreadSafeReference.init)
 
         return RealmWrite<Void> { realm in
