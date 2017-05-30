@@ -77,7 +77,17 @@ class BasicOperatorSpec: QuickSpec {
                 }
             }
 
-            it("works well with `flatMap` operator") {
+            it("works well with `flatMap` operator (Read -> Read)") {
+                let composedIO = RealmRead<String> { _ in "A" }
+                    .flatMap { name in RealmRead<Dog>.object(forPrimaryKey: name) }
+
+                let result = try! self.realm.run(io: composedIO)
+
+                expect(result?.name).to(equal("A"))
+                expect(result?.age).to(equal(10))
+            }
+
+            it("works well with `flatMap` operator (Read -> Write)") {
                 let readDogIO = RealmRead<Dog>.object(forPrimaryKey: "A").map { $0! }
                 
                 func modifyDogIO(dog: Dog) -> RealmWrite<Dog> {
@@ -92,6 +102,14 @@ class BasicOperatorSpec: QuickSpec {
                     .map { $0.age }
                 
                 expect(try! self.realm.run(io: io)).to(equal(18))
+            }
+
+            it("works well with `flatMap` operator (Write -> Any)") {
+                let composedIO = RealmWrite<String> { _ in "A" }
+                    .flatMap { _ in RealmWrite { _ in "B" } }
+
+                let result = try! self.realm.run(io: composedIO)
+                expect(result).to(equal("B"))
             }
         }
 
