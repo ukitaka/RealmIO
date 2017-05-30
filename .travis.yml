@@ -4,3 +4,8 @@ language: generic
 sudo: required
 dist: trusty
 osx_image: xcode8.3
+
+script:
+  - xcodebuild test -scheme "RealmIO-macOS"
+  - xcodebuild test -scheme "RealmIO-iOS" -destination "platform=iOS Simulator,name=iPhone 7,OS=10.3"
+  - xcodebuild test -scheme "RealmIO-tvOS" -destination "OS=10.2,name=Apple TV 1080p"
