@@ -17,6 +17,15 @@ class BasicOperatorSpec: QuickSpec {
     override func spec() {
         super.spec()
 
+        describe("`init(error:)` operator") {
+            it("should throw Error when run io that initalized with `init(error:)`") {
+                struct MyError: Error { }
+                let error = MyError()
+                let io = RealmIO<Read, Void>(error: error)
+                expect { try self.realm.run(io: io) }.to(throwError())
+            }
+        }
+
         describe("`map` operator") {
             beforeEach {
                 try! self.realm.write {
