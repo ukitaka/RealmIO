@@ -90,6 +90,11 @@ let result = try? realm.run(io: io)
 If operation needs to write to realm (it means `io` is an instance of `RealmWrite<T>`),
 `realm.run(io:)` begins transaction automatically.
 
+`realm.run(io:)` throws 2 error types.
+
++ `Realm.Error`
++ Error that thrown by user
+
 ### Compose realm operation with `flatMap`
 
 `flatMap` allows you to compose realm actions.
