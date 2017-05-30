@@ -62,6 +62,9 @@
 		26D923EC1ED2ED1800DB58ED /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D923EB1ED2ED1800DB58ED /* Utils.swift */; };
 		26D923ED1ED2ED1800DB58ED /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D923EB1ED2ED1800DB58ED /* Utils.swift */; };
 		26D923EE1ED2ED1800DB58ED /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D923EB1ED2ED1800DB58ED /* Utils.swift */; };
+		26E37CFA1EDD7A7B00FFF7C5 /* RealmOperationSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E37CF91EDD7A7B00FFF7C5 /* RealmOperationSpec.swift */; };
+		26E37CFB1EDD7A7B00FFF7C5 /* RealmOperationSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E37CF91EDD7A7B00FFF7C5 /* RealmOperationSpec.swift */; };
+		26E37CFC1EDD7A7B00FFF7C5 /* RealmOperationSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E37CF91EDD7A7B00FFF7C5 /* RealmOperationSpec.swift */; };
 		52D6D9871BEFF229002C0205 /* RealmIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* RealmIO.framework */; };
 		DD7502881C68FEDE006590AF /* RealmIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6DA0F1BF000BD002C0205 /* RealmIO.framework */; };
 		DD7502921C690C7A006590AF /* RealmIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D9F01BEFFFBE002C0205 /* RealmIO.framework */; };
@@ -169,6 +172,7 @@
 		26AF8C0E1EAF2E77005CF454 /* CompositionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompositionSpec.swift; sourceTree = "<group>"; };
 		26D923E71ED2E50200DB58ED /* BasicOperatorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicOperatorSpec.swift; sourceTree = "<group>"; };
 		26D923EB1ED2ED1800DB58ED /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		26E37CF91EDD7A7B00FFF7C5 /* RealmOperationSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmOperationSpec.swift; sourceTree = "<group>"; };
 		52D6D97C1BEFF229002C0205 /* RealmIO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RealmIO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9861BEFF229002C0205 /* RealmIO-iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RealmIO-iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9E21BEFFF6E002C0205 /* RealmIO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RealmIO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -298,6 +302,7 @@
 				E828333C1EAE3DD00024D7FB /* Objects.swift */,
 				26AF8C0E1EAF2E77005CF454 /* CompositionSpec.swift */,
 				26D923E71ED2E50200DB58ED /* BasicOperatorSpec.swift */,
+				26E37CF91EDD7A7B00FFF7C5 /* RealmOperationSpec.swift */,
 				26D923EB1ED2ED1800DB58ED /* Utils.swift */,
 			);
 			path = Tests;
@@ -629,6 +634,7 @@
 				26D923E81ED2E50200DB58ED /* BasicOperatorSpec.swift in Sources */,
 				E828333D1EAE3DD00024D7FB /* Objects.swift in Sources */,
 				26D923EC1ED2ED1800DB58ED /* Utils.swift in Sources */,
+				26E37CFA1EDD7A7B00FFF7C5 /* RealmOperationSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -679,6 +685,7 @@
 				26D923E91ED2E50200DB58ED /* BasicOperatorSpec.swift in Sources */,
 				E828333E1EAE3DD00024D7FB /* Objects.swift in Sources */,
 				26D923ED1ED2ED1800DB58ED /* Utils.swift in Sources */,
+				26E37CFB1EDD7A7B00FFF7C5 /* RealmOperationSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -690,6 +697,7 @@
 				26D923EA1ED2E50200DB58ED /* BasicOperatorSpec.swift in Sources */,
 				E828333F1EAE3DD00024D7FB /* Objects.swift in Sources */,
 				26D923EE1ED2ED1800DB58ED /* Utils.swift in Sources */,
+				26E37CFC1EDD7A7B00FFF7C5 /* RealmOperationSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
