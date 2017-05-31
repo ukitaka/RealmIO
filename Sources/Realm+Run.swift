@@ -10,16 +10,32 @@ import Foundation
 import RealmSwift
 
 public extension Realm {
+
+    /// Run realm operation.
+    ///
+    /// - Parameter io: realm operation.
+    /// - Returns: realm operation result.
+    /// - Throws: `Realm.Error` or error thrown by user.
     @discardableResult
     public func run<T>(io: RealmRead<T>) throws -> T {
         return try io._run(self)
     }
 
+    /// Run realm operation.
+    ///
+    /// - Parameter io: realm operation.
+    /// - Returns: realm operation result.
+    /// - Throws: `Realm.Error` or error thrown by user.
     @discardableResult
     public func run<T>(io: RealmWrite<T>) throws -> T {
         return try writeAndReturn { try io._run(self) }
     }
 
+    /// Run realm operation.
+    ///
+    /// - Parameter io: realm operation.
+    /// - Returns: realm operation result.
+    /// - Throws: `Realm.Error` or error thrown by user.
     @discardableResult
     public func run<T>(io: AnyRealmIO<T>) throws -> T {
         if io.isWrite {
@@ -31,17 +47,33 @@ public extension Realm {
 }
 
 public extension Realm {
+
+    /// Run realm operation with default realm instance.
+    ///
+    /// - Parameter io: realm operation.
+    /// - Returns: realm operation result.
+    /// - Throws: `Realm.Error` or error thrown by user.
     @discardableResult
     public static func run<T>(io: RealmRead<T>) throws -> T {
         return try io._run(Realm())
     }
 
+    /// Run realm operation with default realm instance.
+    ///
+    /// - Parameter io: realm operation.
+    /// - Returns: realm operation result.
+    /// - Throws: `Realm.Error` or error thrown by user.
     @discardableResult
     public static func run<T>(io: RealmWrite<T>) throws -> T {
         let realm = try Realm()
         return try realm.writeAndReturn { try io._run(realm) }
     }
 
+    /// Run realm operation with default realm instance.
+    ///
+    /// - Parameter io: realm operation.
+    /// - Returns: realm operation result.
+    /// - Throws: `Realm.Error` or error thrown by user.
     @discardableResult
     public static func run<T>(io: AnyRealmIO<T>) throws -> T {
         if io.isWrite {
