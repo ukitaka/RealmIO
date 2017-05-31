@@ -29,6 +29,8 @@ public struct RealmIO<RW, T> {
     }
 
     /// Returns a new operation by mapping `T` value using `transform`.
+    ///
+    /// - Returns: New operation transformed by `transform`
     public func map<S>(_ transform: @escaping (T) throws -> S) -> RealmIO<RW, S> {
         return RealmIO<RW, S> { realm in
             try transform(self._run(realm))
@@ -56,33 +58,40 @@ public typealias RealmWrite<T> = RealmIO<Write, T>
 // MARK: - flatMap
 
 public extension RealmIO where RW == Read {
-    // Read & Write -> Write
-    public func flatMap<S>(_ f: @escaping (T) throws -> RealmWrite<S>) -> RealmWrite<S> {
+    /// Returns a new operator composed of this `Read` operation and given `Write` operation.
+    ///
+    /// - Returns: composed `Write` operation
+    public func flatMap<S>(_ transform: @escaping (T) throws -> RealmWrite<S>) -> RealmWrite<S> {
         return RealmWrite<S> { realm in
-            try f(self._run(realm))._run(realm)
+            try transform(self._run(realm))._run(realm)
         }
     }
 
-    // Read & Read -> Read
-    public func flatMap<S>(_ f: @escaping (T) throws -> RealmRead<S>) -> RealmRead<S> {
+    /// Returns a new operator composed of this `Read` operation and given `Read` operation.
+    ///
+    /// - Returns: composed `Read` operation
+    public func flatMap<S>(_ transform: @escaping (T) throws -> RealmRead<S>) -> RealmRead<S> {
         return RealmRead<S> { realm in
-            try f(self._run(realm))._run(realm)
+            try transform(self._run(realm))._run(realm)
         }
     }
 }
 
 public extension RealmIO where RW == Write {
-    // Write & Any -> Write
-    public func flatMap<RW2, S>(_ f: @escaping (T) throws -> RealmIO<RW2, S>) -> RealmWrite<S> {
+    /// Returns a new operator composed of this `Write` operation and given operation.
+    ///
+    /// - Returns: composed `Write` operation
+    public func flatMap<RW2, S>(_ transform: @escaping (T) throws -> RealmIO<RW2, S>) -> RealmWrite<S> {
         return RealmWrite<S> { realm in
-            try f(self._run(realm))._run(realm)
+            try transform(self._run(realm))._run(realm)
         }
     }
 }
 
-// MARK: - Convert to WriteTxn
+// MARK: - Convert to write operation
 
 public extension RealmIO where RW == Read {
+    /// Convert `Read` operation to `Write` operation.
     public var writeIO: RealmWrite<T> {
         return flatMap { t in
             RealmWrite { realm in t }
@@ -93,17 +102,19 @@ public extension RealmIO where RW == Read {
 // MARK: - modify
 
 public extension RealmIO where T: Object, RW == Write {
-    public func modify(_ f: @escaping (T) -> ()) -> RealmWrite<T> {
+    /// Util method to modify `Object`
+    public func modify(_ transform: @escaping (T) -> ()) -> RealmWrite<T> {
         return self.map { (obj: T) -> T in
-            f(obj)
+            transform(obj)
             return obj
         }
     }
 }
 
 public extension RealmIO where T: Object, RW == Read {
-    public func modify(_ f: @escaping (T) -> ()) -> RealmWrite<T> {
-        return self.writeIO.modify(f)
+    /// Util method to modify `Object`
+    public func modify(_ transform: @escaping (T) -> ()) -> RealmWrite<T> {
+        return self.writeIO.modify(transform)
     }
 }
 
