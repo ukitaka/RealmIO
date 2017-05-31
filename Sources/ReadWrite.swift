@@ -16,6 +16,6 @@ public struct Read { }
 
 // MARK: - Write
 
-/// `Read` is used as `RW` type parameter of `RealmIO<RW, T>`
+/// `Write` is used as `RW` type parameter of `RealmIO<RW, T>`
 /// It represents that realm operation needs to call `realm.write`.
 public struct Write { }
