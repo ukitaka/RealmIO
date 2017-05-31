@@ -8,6 +8,7 @@
 
 import RealmSwift
 
+/// `AnyRealmIO` represents realm operation that cannot be determined `Read` or `Write` statically.
 public struct AnyRealmIO<T> {
     internal let _run: (Realm) throws -> T
 
