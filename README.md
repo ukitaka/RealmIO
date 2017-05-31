@@ -82,6 +82,8 @@ func find(by userID: Int) -> RealmRead<User> {
 }
 ```
 
+If you already know about the Reader monad, `RealmIO<RW, T>` is the same as `Reader<Realm, T>`, except for the `RW` type parameter.
+
 ### Run Realm operation with `realm.run(io:)`
 
 You can run preceding realm operation with `realm.run(io:)`.
