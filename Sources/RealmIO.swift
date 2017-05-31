@@ -8,23 +8,36 @@
 
 import RealmSwift
 
+/// `RealmIO` represents realm operation.
+/// - `RW` is actually `Read` or `Write`. It represents that operation is readonly or not.
+/// - `T` is a return value type.
 public struct RealmIO<RW, T> {
     internal let _run: (Realm) throws -> T
 
+    /// Obtains an instance of the `RealmIO<RW, T>` with given operation.
+    ///
+    /// - Parameter _run: realm operation. Actual `realm` instance is passed when call `realm.run(io:)`.
     public init(_ _run: @escaping (Realm) throws -> T) {
         self._run = _run
     }
 
+    /// Constructs a failure operation with given `error`.
+    ///
+    /// - Parameter error: error that will be thrown when call `realm.run(io:)`
     public init(error: Error) {
         self._run = { _ in throw error }
     }
 
-    public func map<S>(_ f: @escaping (T) throws -> S) -> RealmIO<RW, S> {
+    /// Returns a new operation by mapping `T` value using `transform`.
+    public func map<S>(_ transform: @escaping (T) throws -> S) -> RealmIO<RW, S> {
         return RealmIO<RW, S> { realm in
-            try f(self._run(realm))
+            try transform(self._run(realm))
         }
     }
 
+    /// Returns a new operation that returns `Realm` instance.
+    /// It is same as `ask` operator of reader monad.
+    /// You can use this method when you want to access realm instance in operator such as `map`.
     public func ask() -> RealmIO<RW, Realm> {
         return RealmIO<RW, Realm> { realm in
             return realm
@@ -34,8 +47,10 @@ public struct RealmIO<RW, T> {
 
 // MARK: - typealias
 
+/// Alias of `RealmIO<Read, T>`
 public typealias RealmRead<T> = RealmIO<Read, T>
 
+/// Alias of `RealmIO<Write, T>`
 public typealias RealmWrite<T> = RealmIO<Write, T>
 
 // MARK: - flatMap
