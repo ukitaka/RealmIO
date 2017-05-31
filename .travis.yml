@@ -1,14 +1,15 @@
-language: objective-c
-os: osx
 language: generic
+os: osx
 sudo: required
 dist: trusty
 osx_image: xcode8.3
-
 before_install:
-  - carthage bootstrap
-
+- carthage bootstrap
 script:
-  - xcodebuild test -scheme "RealmIO-macOS"
-  - xcodebuild test -scheme "RealmIO-iOS" -destination "platform=iOS Simulator,name=iPhone 7,OS=10.3"
-  - xcodebuild test -scheme "RealmIO-tvOS" -destination "OS=10.2,name=Apple TV 1080p"
+- xcodebuild test -scheme "RealmIO-macOS"
+- xcodebuild test -scheme "RealmIO-iOS" -destination "platform=iOS Simulator,name=iPhone
+  7,OS=10.3"
+- xcodebuild test -scheme "RealmIO-tvOS" -destination "OS=10.2,name=Apple TV 1080p"
+env:
+  global:
+    secure: TnxJP+6dL51tOSKu9lGqAJvCCoq6j4UOCPTy4cqKfJjvoTDQx1r+rBS/gu1XykWJGbETNMaqg5wAEtHxT4ayCMmwVSLBBkrfg2mXwFVTgmqcsipJotpTjQ3byuThUmS2hbZ/tLtU79BFu/N2PUoKUlXLoBiwNsDDHTcv+2NPDZh2LEsTDiepz/wdDVvuC3p/HiT1zGBicA0lHRfi9+vQfSciv4Z+X0mspcIPd5Sq3cCeuTL7gKRrWpVJ6zhgfnIrHj7St/XQsCdLLGa6e3o7K+bOfhXNVv5NAF4uGjpkWeIaJ4ETQLxQj0qyLpYNs+CXxQMANhwDp5hf0Ud6RHYhf2mgJpUgHnDAp37bbAcX/TCwZfLtfFD24RYNedqHgbztNjk3cuD7v/F8SaFDeIjpyQlbUi32S7nseJa/Ns+i+cxwSUeaRsMQPsLiUxLU7hqD0zAdt+DUPeyyIHrcGVFw1qytt2ClzYHe34TCEqPbor4ydjJOhoxo3yLx3Rk9eSM/iZmnqlOKNn4gcfyYjpTuCNItDKikGT9ck9y/RflkJ4/Qi5MU5Gd67afbe2YxQwXRmZwDK8iImU6dsN9LgMIcz0SAf+f2rFJz4Eztv5CQ4G3+872kQIXNp2LejjqyV4xeUdQSB3ENP48ixgpS0K2B3o2Io5PSx33vlaD8THjN25w=
