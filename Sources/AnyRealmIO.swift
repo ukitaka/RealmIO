@@ -35,7 +35,7 @@ public struct AnyRealmIO<T> {
 
     public init(error: Error, isRead: Bool = true) {
         self._run = { _ in throw error }
-        self.isRead = true
+        self.isRead = isRead
     }
 
     public func map<S>(_ f: @escaping (T) throws -> S) -> AnyRealmIO<S> {
