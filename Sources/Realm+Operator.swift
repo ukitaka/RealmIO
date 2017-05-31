@@ -184,19 +184,33 @@ public extension Realm.IO {
 // MARK: - Read
 
 public extension Realm.IO {
-    public static func objects<T>(_ type: T.Type) -> RealmRead<Results<T>> where T: Object {
+
+    /// Returns all objects of the given type stored in the Realm.
+    ///
+    /// - parameter type: The type of the objects to be returned.
+    /// - returns: `Read` operation
+    public static func objects<T: Object>(_ type: T.Type) -> RealmRead<Results<T>> {
         return RealmRead<Results<T>> { realm in
             return realm.objects(type)
         }
     }
 
+    /// Returns all objects for a given class name in the Realm.
+    ///
+    /// - parameter typeName: The class name of the objects to be returned.
+    /// - returns: `Read` operation
     public static func dynamicObjects(_ typeName: String) -> RealmRead<Results<DynamicObject>> {
         return RealmRead<Results<DynamicObject>> { realm in
             return realm.dynamicObjects(typeName)
         }
     }
 
-    public static func object<T, K>(ofType type: T.Type, forPrimaryKey key: K) -> RealmRead<T?> where T: Object {
+    /// Retrieves the single instance of a given object type with the given primary key from the Realm.
+    ///
+    /// - parameter type: The type of the object to be returned.
+    /// - parameter key:  The primary key of the desired object.
+    /// - returns: `Read` operation
+    public static func object<T: Object, K>(ofType type: T.Type, forPrimaryKey key: K) -> RealmRead<T?> {
         return RealmRead<T?> { realm in
             return realm.object(ofType: type, forPrimaryKey: key)
         }
