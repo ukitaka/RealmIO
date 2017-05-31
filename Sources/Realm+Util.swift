@@ -8,7 +8,7 @@
 
 import RealmSwift
 
-extension Realm {
+internal extension Realm {
     func writeAndReturn<T>(block: () throws -> T) throws -> T {
         beginWrite()
         let t: T
