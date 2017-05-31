@@ -19,6 +19,12 @@ class RealmOperationSpec: QuickSpec {
         super.spec()
 
         describe("`add` operator") {
+            beforeEach {
+                try! self.realm.write {
+                    self.realm.deleteAll()
+                }
+            }
+
             it ("works well") {
                 let dog = Dog()
                 dog.name = "Taro"
