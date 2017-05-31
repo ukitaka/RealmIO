@@ -3,6 +3,8 @@
 
 # RealmIO
 
+[![Build Status](https://travis-ci.org/ukitaka/RealmIO.svg?branch=master)](https://travis-ci.org/ukitaka/RealmIO)
+
 `RealmIO` makes `Realm` operation more safely, reusable and composable by using `reader monad`.
 
 ## Motivation
