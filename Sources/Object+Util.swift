@@ -6,4 +6,24 @@
 //  Copyright © 2017年 waft. All rights reserved.
 //
 
-import Foundation
+import RealmSwift
+
+internal extension Object {
+    var isUnmanaged: Bool {
+        return realm == nil
+    }
+
+    var isManaged: Bool {
+        return !isUnmanaged
+    }
+}
+
+internal extension Sequence where Self.Iterator.Element: Object {
+    var isUnmanaged: Bool {
+        return contains { $0.isUnmanaged }
+    }
+
+    var isManaged: Bool {
+        return !isUnmanaged
+    }
+}

@@ -18,7 +18,7 @@ public extension Realm {
 
 public extension Realm.IO {
     public static func add(_ object: Object) -> RealmWrite<Void> {
-        guard object.realm != nil else {
+        guard object.isManaged else {
             return RealmWrite<Void> { realm in realm.add(object) }
         }
 
@@ -33,7 +33,7 @@ public extension Realm.IO {
     }
 
     public static func add(_ object: Object, update: Bool) -> RealmWrite<Void> {
-        guard object.realm != nil else {
+        guard object.isManaged else {
             return RealmWrite<Void> { realm in realm.add(object, update: update) }
         }
 
@@ -48,9 +48,7 @@ public extension Realm.IO {
     }
 
     public static func add<S>(_ objects: S) -> RealmWrite<Void> where S: Sequence, S.Iterator.Element: Object {
-        let unmanaged: Bool = objects.contains { $0.realm == nil }
-
-        guard unmanaged == false else {
+        guard objects.isManaged else {
             return RealmWrite<Void> { realm in realm.add(objects) }
         }
 
@@ -62,9 +60,7 @@ public extension Realm.IO {
     }
 
     public static func add<S>(_ objects: S, update: Bool) -> RealmWrite<Void> where S: Sequence, S.Iterator.Element: Object {
-        let unmanaged: Bool = objects.contains { $0.realm == nil }
-
-        guard unmanaged == false else {
+        guard objects.isManaged else {
             return RealmWrite<Void> { realm in realm.add(objects, update: update) }
         }
 
