@@ -220,12 +220,22 @@ public extension Realm.IO {
 // MARK: - utils
 
 public extension Realm.IO {
+
+    /// Just instantiate object on RealmIO way.
+    ///
+    /// - parameter type: The type of the object to be returned.
+    /// - returns: `Write` operation
     public static func unmanaged<T: Object>(_ type: T.Type) -> RealmWrite<T> {
         return RealmWrite<T> { _ in
             T()
         }
     }
 
+    /// Just instantiate object with primary key on RealmIO way.
+    ///
+    /// - parameter type: The type of the object to be returned.
+    /// - parameter primaryKey: primary key for object
+    /// - returns: `Write` operation
     public static func unmanaged<T: Object, S>(_ type: T.Type, primaryKey: S) -> RealmWrite<T> {
         return RealmWrite<T> { _ in
             guard let primaryKeyName = T.primaryKey() else {
@@ -239,18 +249,32 @@ public extension Realm.IO {
 }
 
 public extension RealmIO where T: Object {
+
+    /// Retrieves the single instance of a given object type with the given primary key from the Realm.
+    ///
+    /// - parameter key:  The primary key of the desired object.
+    /// - returns: `Read` operation
     public static func object<K>(forPrimaryKey key: K) -> RealmRead<T?> {
         return RealmRead<T?> { realm in
             realm.object(ofType: T.self, forPrimaryKey: key)
         }
     }
 
+    /// Returns all objects of the given type stored in the Realm.
+    ///
+    /// - returns: `Read` operation
     public static func objects() -> RealmRead<Results<T>> {
         return RealmRead<Results<T>> { realm in
             realm.objects(T.self)
         }
     }
 
+    /// Creates or updates a Realm object with a given value, adding it to the Realm and returning it.
+    ///
+    /// - parameter value:  The value used to populate the object.
+    /// - parameter update: If `true`, the Realm will try to find an existing copy of the object (with the same primary
+    /// key), and update it. Otherwise, the object will be added.
+    /// - returns: `Write` operation
     public static func create(value: Any = [:], update: Bool = false) -> RealmWrite<T> {
         return RealmWrite<T> { realm in
             return realm.create(T.self, value: value, update: update)
