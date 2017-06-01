@@ -18,5 +18,5 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/ukitaka/RealmIO.git", :tag => s.version.to_s }
   s.source_files  = "Sources/**/*"
   s.frameworks  = "Foundation"
-  s.dependency 'RealmSwift', '> 2.2'
+  s.dependency 'RealmSwift'
 end
