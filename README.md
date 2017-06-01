@@ -1,6 +1,3 @@
-
-⚠️ This library is still under construction ⚠️
-
 # RealmIO
 
 [![Build Status](https://travis-ci.org/ukitaka/RealmIO.svg?branch=master)](https://travis-ci.org/ukitaka/RealmIO)
