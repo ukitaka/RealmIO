@@ -42,6 +42,21 @@ class RealmOperationSpec: QuickSpec {
             }
         }
 
+        describe("`create` operator") {
+            beforeEach {
+                try! self.realm.write {
+                    self.realm.deleteAll()
+                }
+            }
+
+            it ("works well to add 1 object") {
+                let createE = Realm.IO.create(Dog.self, value: ["name": "E"], update: false)
+                let readE = RealmRead<Dog>.object(forPrimaryKey: "E")
+                let result = try! self.realm.run(io: createE.flatMap { _ in readE })
+                expect(result?.name).to(equal("E"))
+            }
+        }
+
         describe("`delete` operator") {
             beforeEach {
                 try! self.realm.write {
