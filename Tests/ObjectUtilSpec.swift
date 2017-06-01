@@ -40,7 +40,7 @@ class ObjectUtilSpec: QuickSpec {
         }
 
         it ("works well with `isManaged`, `isUnmanaged` operator") {
-            let readAllDogs = RealmRead<Dog>.objects()
+            let readAllDogs = Realm.IO.objects(Dog.self)
             let result = try! self.realm.run(io: readAllDogs)
             expect(result.isUnmanaged).to(beFalse())
             expect(result.isManaged).to(beTrue())

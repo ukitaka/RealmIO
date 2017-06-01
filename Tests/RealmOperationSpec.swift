@@ -37,5 +37,22 @@ class RealmOperationSpec: QuickSpec {
                 expect(result?.age).to(equal(4))
             }
         }
+
+        describe("`delete` operator") {
+            beforeEach {
+                try! self.realm.write {
+                    self.realm.deleteAll()
+                    self.realm.add(Dog.dogs)
+                }
+            }
+
+            it ("works well") {
+                let delete = RealmRead<Dog>.object(forPrimaryKey: "A").flatMap { dog in Realm.IO.delete(dog!) }
+                try! self.realm.run(io: delete)
+                let readAll = Realm.IO.objects(Dog.self)
+                let result = try! self.realm.run(io: readAll)
+                expect(result.count).to(equal(3))
+            }
+        }
     }
 }
