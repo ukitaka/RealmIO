@@ -153,5 +153,24 @@ class RealmOperationSpec: QuickSpec {
                 expect(result.count).to(equal(0))
             }
         }
+
+        describe("`dynamicObjects` operator") {
+            it("works well") {
+                let io = Realm.IO.dynamicObjects("Dog")
+                expect { try! self.realm.run(io: io) }.notTo(throwError())
+            }
+        }
+
+        describe("`unmanaged` operator") {
+            it("works well") {
+                let io = Realm.IO.unmanaged(Dog.self)
+                expect { try! self.realm.run(io: io) }.notTo(throwError())
+            }
+
+            it("works well with primary key") {
+                let io = Realm.IO.unmanaged(Dog.self, primaryKey: "Z")
+                expect { try! self.realm.run(io: io) }.notTo(throwError())
+            }
+        }
     }
 }
