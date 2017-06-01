@@ -20,6 +20,9 @@ public extension Realm.IO {
 
     /// Adds or updates an existing object into the Realm.
     ///
+    /// - Warning: This method is not thread safe for now. It is not better to pass object directly.
+    ///  If you want to use this method safely, you should call `realm.run(io:)` in a same thread, or 
+    ///  use with `flatMap`.
     /// - Parameter object: The object to be added to this Realm.
     /// - Parameter update: If `true`, the Realm will try to find an existing copy of the object
     ///     (with the same primary key), and update it. Otherwise, the object will be added.
@@ -30,6 +33,9 @@ public extension Realm.IO {
 
     /// Adds all the objects in a collection into the Realm.
     ///
+    /// - Warning: This method is not thread safe for now. It is not better to pass object directly.
+    ///  If you want to use this method safely, you should call `realm.run(io:)` in a same thread, or 
+    ///  use with `flatMap`.
     /// - Parameter objects: A sequence which contains objects to be added to the Realm.
     /// - Returns: `Write` operation
     public static func add<S>(_ objects: S) -> RealmWrite<Void> where S: Sequence, S.Iterator.Element: Object {
@@ -38,6 +44,9 @@ public extension Realm.IO {
 
     /// Adds or updates all the objects in a collection into the Realm.
     ///
+    /// - Warning: This method is not thread safe for now. It is not better to pass object directly.
+    ///  If you want to use this method safely, you should call `realm.run(io:)` in a same thread, or 
+    ///  use with `flatMap`.
     /// - Parameter objects: A sequence which contains objects to be added to the Realm.
     /// - Parameter update: If `true`, objects that are already in the Realm will be updated instead of added anew.
     /// - Returns: `Write` operation
@@ -74,6 +83,9 @@ public extension Realm.IO {
 
     /// Deletes an object from the Realm. Once the object is deleted it is considered invalidated.
     ///
+    /// - Warning: This method is not thread safe for now. It is not better to pass object directly.
+    ///  If you want to use this method safely, you should call `realm.run(io:)` in a same thread, or 
+    ///  use with `flatMap`.
     /// - Parameter object: The object to be deleted.
     /// - Returns: `Write` operation
     public static func delete(_ object: Object) -> RealmWrite<Void> {
@@ -82,6 +94,9 @@ public extension Realm.IO {
 
     /// Deletes zero or more objects from the Realm.
     ///
+    /// - Warning: This method is not thread safe for now. It is not better to pass object directly.
+    ///  If you want to use this method safely, you should call `realm.run(io:)` in a same thread, or 
+    ///  use with `flatMap`.
     /// - Parameter objects: The objects to be deleted. This can be a `List<Object>`,
     ///     `Results<Object>`, or any other Swift `Sequence` whose
     ///     elements are `Object`s (subject to the caveats above).
@@ -92,6 +107,9 @@ public extension Realm.IO {
 
     /// Deletes zero or more objects from the Realm.
     ///
+    /// - Warning: This method is not thread safe for now. It is not better to pass object directly.
+    ///  If you want to use this method safely, you should call `realm.run(io:)` in a same thread, or 
+    ///  use with `flatMap`.
     /// - Parameter objects: A list of objects to delete.
     /// - Returns: `Write` operation
     public static func delete<T: Object>(_ objects: List<T>) -> RealmWrite<Void> {
@@ -100,6 +118,9 @@ public extension Realm.IO {
 
     /// Deletes zero or more objects from the Realm.
     ///
+    /// - Warning: This method is not thread safe for now. It is not better to pass object directly.
+    ///  If you want to use this method safely, you should call `realm.run(io:)` in a same thread, or 
+    ///  use with `flatMap`.
     /// - Parameter objects: A `Results` containing the objects to be deleted.
     /// - Returns: `Write` operation
     public static func delete<T: Object>(_ objects: Results<T>) -> RealmWrite<Void> {
