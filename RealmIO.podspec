@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "RealmIO"
-  s.version      = "1.0"
+  s.version      = "1.0.0"
   s.summary      = "RealmIO makes Realm operation more safely, reusable and composable by using reader monad."
   s.description  = <<-DESC
   RealmIO makes Realm operation more safely, reusable and composable by using reader monad.
