@@ -19,6 +19,10 @@ class Dog: Object {
     }
 }
 
+class Owner: Object {
+    let dogs = List<Dog>()
+}
+
 extension Dog {
     static var dogA: Dog {
         let dog = Dog()
