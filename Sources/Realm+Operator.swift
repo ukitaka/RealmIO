@@ -18,6 +18,14 @@ public extension Realm {
 
 public extension Realm.IO {
 
+    /// Adds object into the Realm.
+    ///
+    /// - Parameter object: The object to be added to this Realm.
+    /// - Returns: `Write` operation
+    public static func add(_ object: Object) -> RealmWrite<Void> {
+        return RealmWrite<Void> { realm in realm.add(object) }
+    }
+
     /// Adds or updates an existing object into the Realm.
     ///
     /// - Warning: This method is not thread safe for now. It is not better to pass object directly.
@@ -27,8 +35,19 @@ public extension Realm.IO {
     /// - Parameter update: If `true`, the Realm will try to find an existing copy of the object
     ///     (with the same primary key), and update it. Otherwise, the object will be added.
     /// - Returns: `Write` operation
-    public static func add(_ object: Object, update: Bool = false) -> RealmWrite<Void> {
+    public static func add(_ object: Object, update: Bool) -> RealmWrite<Void> {
         return RealmWrite<Void> { realm in realm.add(object, update: update) }
+    }
+
+    /// Adds all the objects in a collection into the Realm.
+    ///
+    /// - Warning: This method is not thread safe for now. It is not better to pass object directly.
+    ///  If you want to use this method safely, you should call `realm.run(io:)` in a same thread, or
+    ///  use with `flatMap`.
+    /// - Parameter objects: A sequence which contains objects to be added to the Realm.
+    /// - Returns: `Write` operation
+    public static func add<S>(_ objects: S) -> RealmWrite<Void> where S: Sequence, S.Iterator.Element: Object {
+        return RealmWrite<Void> { realm in realm.add(objects) }
     }
 
     /// Adds or updates all the objects in a collection into the Realm.
