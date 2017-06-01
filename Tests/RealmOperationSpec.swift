@@ -143,5 +143,15 @@ class RealmOperationSpec: QuickSpec {
                 expect { try self.realm.run(io: deleteDogs) }.notTo(throwError())
             }
         }
+
+        describe("`deleteAll` operator") {
+            it("works well") {
+                let io = Realm.IO.add(Dog.dogs)
+                    .flatMap { _ in Realm.IO.deleteAll() }
+                    .flatMap { _ in Realm.IO.objects(Dog.self) }
+                let result = try! self.realm.run(io: io)
+                expect(result.count).to(equal(0))
+            }
+        }
     }
 }
