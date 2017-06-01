@@ -5,6 +5,9 @@
 
 [![Build Status](https://travis-ci.org/ukitaka/RealmIO.svg?branch=master)](https://travis-ci.org/ukitaka/RealmIO)
 [![codecov](https://codecov.io/gh/ukitaka/RealmIO/branch/master/graph/badge.svg)](https://codecov.io/gh/ukitaka/RealmIO)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+[![CocoaPods](https://img.shields.io/cocoapods/v/RealmIO.svg)]()
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 `RealmIO` makes `Realm` operation more safely, reusable and composable by using `reader monad`.
