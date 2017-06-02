@@ -182,3 +182,6 @@ github "ukitaka/RealmIO"
 + watchOS 2.0+
 + tvOS 9.0+
 
+## Credits
+
+`RealmIO` was inspired by [Slick](http://slick.lightbend.com/)'s `DBIOAction`.
