@@ -136,24 +136,6 @@ write.flatMap { _ in write } // Write
 `Realm.IO` provides useful operators to create `RealmIO` instance.
 See:  [Realm+Operator.swift](https://github.com/ukitaka/RealmIO/blob/master/Sources/Realm%2BOperator.swift)
 
-
-### NOTE: Some of methods provided by `RealmIO` are not thread safe yet.
-
-Some methods that takes `Object` as an argument such as `Realm.IO.add`, `Realm.IO.delete` are not thread safe for now. 
-It is not better to pass `Object` directly. If you want to use this method safely, you should call `realm.run(io:)` in a same thread, or use with `flatMap`.
-
-```swift
-// OK: call `realm.run(io:)` in a same thread.
-let io1 = Realm.IO.add(object)
-try realm.run(io: io1)
-
-// OK: use with `flatMap`
-let io2 = Realm.IO.objects(Dog.self).flatMap(Realm.IO.delete)
-try realm.run(io: io2)
-```
-
-Since `ThreadSafeReference` has a constraint that references can not be resolved within write transactions, implementation with `ThreadSafeReference` can not be done in 1.0. I'm considering measures after the next version.
-
 ## Installation
 
 ### CocoaPods
