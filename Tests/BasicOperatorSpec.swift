@@ -21,9 +21,9 @@ class BasicOperatorSpec: QuickSpec {
             it("should throw Error when run io that initalized with `init(error:)`") {
                 struct MyError: Error { }
                 let error = MyError()
-                let read = RealmIO<Read, Void>(error: error)
+                let read = RealmIO<ReadOnly, Void>(error: error)
                 expect { try self.realm.run(io: read) }.to(throwError())
-                let write = RealmIO<Write, Void>(error: error)
+                let write = RealmIO<ReadWrite, Void>(error: error)
                 expect { try self.realm.run(io: write) }.to(throwError())
             }
         }
