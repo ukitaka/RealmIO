@@ -49,20 +49,27 @@ public struct RealmIO<RW: ReadWrite, T> {
 
 // MARK: - typealias
 
-/// Alias of `RealmIO<Read, T>`
+/// Alias of `RealmIO<ReadOnly, T>`
+@available(*, deprecated, renamed: "RealmRO")
 public typealias RealmRead<T> = RealmIO<ReadOnly, T>
 
-/// Alias of `RealmIO<Write, T>`
+public typealias RealmRO<T> = RealmIO<ReadOnly, T>
+
+
+/// Alias of `RealmIO<ReadWrite, T>`
+@available(*, deprecated, renamed: "RealmRW")
 public typealias RealmWrite<T> = RealmIO<ReadWrite, T>
+
+public typealias RealmRW<T> = RealmIO<ReadWrite, T>
 
 // MARK: - flatMap
 
 public extension RealmIO where RW: ReadOnly {
     /// Returns a new operator composed of this `Read` operation and given `Read` operation.
     ///
-    /// - Returns: composed `Read` operation
-    public func flatMap<S>(_ transform: @escaping (T) throws -> RealmRead<S>) -> RealmRead<S> {
-        return RealmRead<S> { realm in
+    /// - Returns: composed `ReadOnly` operation
+    public func flatMap<S>(_ transform: @escaping (T) throws -> RealmRO<S>) -> RealmRO<S> {
+        return RealmRO<S> { realm in
             try transform(self._run(realm))._run(realm)
         }
     }
@@ -71,9 +78,9 @@ public extension RealmIO where RW: ReadOnly {
 public extension RealmIO {
     /// Returns a new operator composed of this `Write` operation and given operation.
     ///
-    /// - Returns: composed `Write` operation
-    public func flatMap<RW2, S>(_ transform: @escaping (T) throws -> RealmIO<RW2, S>) -> RealmWrite<S> {
-        return RealmWrite<S> { realm in
+    /// - Returns: composed `ReadWrite` operation
+    public func flatMap<RW2, S>(_ transform: @escaping (T) throws -> RealmIO<RW2, S>) -> RealmRW<S> {
+        return RealmRW<S> { realm in
             try transform(self._run(realm))._run(realm)
         }
     }
@@ -83,9 +90,9 @@ public extension RealmIO {
 
 public extension RealmIO where RW: ReadOnly {
     /// Convert `Read` operation to `Write` operation.
-    public var writeIO: RealmWrite<T> {
+    public var writeIO: RealmRW<T> {
         return flatMap { t in
-            RealmWrite { realm in t }
+            RealmRW { realm in t }
         }
     }
 }
@@ -94,9 +101,9 @@ public extension RealmIO where RW: ReadOnly {
 
 public extension RealmIO where T: Object, RW: ReadWrite {
     /// Util method to modify `Object`
-    public func modify(_ transform: @escaping (T) -> ()) -> RealmWrite<T> {
+    public func modify(_ transform: @escaping (T) -> ()) -> RealmRW<T> {
         return flatMap { t in
-            RealmWrite { realm in
+            RealmRW { realm in
                 transform(t)
                 return t
             }
@@ -104,14 +111,24 @@ public extension RealmIO where T: Object, RW: ReadWrite {
     }
 }
 
-// MARK: write or read
+// MARK: readonly or readwrite
 
 public extension RealmIO {
+    @available(*, deprecated, renamed: "isReadOnly")
     var isRead: Bool {
         return RW.self is ReadOnly.Type
     }
 
+    var isReadOnly: Bool {
+        return RW.self is ReadOnly.Type
+    }
+
+    @available(*, deprecated, renamed: "isReadWrite")
     var isWrite: Bool {
+        return !(RW.self is ReadOnly.Type)
+    }
+
+    var isReadWrite: Bool {
         return !(RW.self is ReadOnly.Type)
     }
 }

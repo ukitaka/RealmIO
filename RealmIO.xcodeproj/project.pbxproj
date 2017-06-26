@@ -160,7 +160,7 @@
 		2638BC7B1EA9A14900E12297 /* RealmIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmIO.swift; sourceTree = "<group>"; };
 		2638BC7C1EA9A14900E12297 /* Realm+Run.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Realm+Run.swift"; sourceTree = "<group>"; };
 		2638BC981EADF9EF00E12297 /* Realm+Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Realm+Operator.swift"; sourceTree = "<group>"; };
-		264784F01EC40D5C00A9AE1D /* AnyRealmIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyRealmIO.swift; sourceTree = "<group>"; };
+		264784F01EC40D5C00A9AE1D /* AnyRealmIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AnyRealmIO.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		269F08071E84F7D0001EC0C7 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		269F08081E84F7D0001EC0C7 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		269F080B1E84F7E2001EC0C7 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/Mac/Realm.framework; sourceTree = "<group>"; };
@@ -175,10 +175,10 @@
 		26AF8C031EAF0AA9005CF454 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/Mac/Quick.framework; sourceTree = "<group>"; };
 		26AF8C081EAF0BBA005CF454 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/tvOS/Nimble.framework; sourceTree = "<group>"; };
 		26AF8C091EAF0BBA005CF454 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/tvOS/Quick.framework; sourceTree = "<group>"; };
-		26AF8C0E1EAF2E77005CF454 /* CompositionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompositionSpec.swift; sourceTree = "<group>"; };
-		26D923E71ED2E50200DB58ED /* BasicOperatorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicOperatorSpec.swift; sourceTree = "<group>"; };
+		26AF8C0E1EAF2E77005CF454 /* CompositionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CompositionSpec.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		26D923E71ED2E50200DB58ED /* BasicOperatorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = BasicOperatorSpec.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		26D923EB1ED2ED1800DB58ED /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		26DE895A1EDEB7730023384E /* AnyRealmIOSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyRealmIOSpec.swift; sourceTree = "<group>"; };
+		26DE895A1EDEB7730023384E /* AnyRealmIOSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AnyRealmIOSpec.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		26DE895E1EDEC57E0023384E /* RunSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunSpec.swift; sourceTree = "<group>"; };
 		26E37CF91EDD7A7B00FFF7C5 /* RealmOperationSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmOperationSpec.swift; sourceTree = "<group>"; };
 		52D6D97C1BEFF229002C0205 /* RealmIO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RealmIO.framework; sourceTree = BUILT_PRODUCTS_DIR; };

@@ -20,11 +20,11 @@ class RunSpec: QuickSpec {
         super.spec()
         describe("realm.run(io:)") {
             let error = MyError()
-            let read = RealmRead<Void> { _ in }
-            let write = RealmWrite<Void> { _ in }
+            let read = RealmRO<Void> { _ in }
+            let write = RealmRW<Void> { _ in }
             let anyRead = AnyRealmIO<Void>(io: read)
             let anyWrite = AnyRealmIO<Void>(io: write)
-            let errorIO = RealmRead<Void>(error: error)
+            let errorIO = RealmRO<Void>(error: error)
 
             expect { try self.realm.run(io: read)     }.notTo(throwError())
             expect { try self.realm.run(io: write)    }.notTo(throwError())
@@ -35,11 +35,11 @@ class RunSpec: QuickSpec {
 
         describe("Realm.run(io:)") {
             let error = MyError()
-            let read = RealmRead<Void> { _ in }
-            let write = RealmWrite<Void> { _ in }
+            let read = RealmRO<Void> { _ in }
+            let write = RealmRW<Void> { _ in }
             let anyRead = AnyRealmIO<Void>(io: read)
             let anyWrite = AnyRealmIO<Void>(io: write)
-            let errorIO = RealmRead<Void>(error: error)
+            let errorIO = RealmRO<Void>(error: error)
 
             expect { try Realm.run(io: read)     }.notTo(throwError())
             expect { try Realm.run(io: write)    }.notTo(throwError())
