@@ -14,9 +14,15 @@ public struct AnyRealmIO<T> {
 
     public let isReadOnly: Bool
 
+    @available(*, deprecated, renamed: "isReadOnly")
+    public var isRead: Bool { return isReadOnly }
+
     public var isReadWrite: Bool {
         return !isReadOnly
     }
+
+    @available(*, deprecated, renamed: "isReadWrite")
+    public var isWrite: Bool { return isReadWrite }
 
     public init(io: RealmIO<ReadOnly, T>) {
         self._run = io._run

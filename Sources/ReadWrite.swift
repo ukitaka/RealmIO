@@ -14,6 +14,8 @@ import Foundation
 /// It represents that realm operation needs to call `realm.write`.
 public class ReadWrite { }
 
+@available(*, deprecated, renamed: "ReadWrite")
+public typealias Write = ReadWrite
 
 // MARK: - ReadOnly
 
@@ -23,6 +25,3 @@ public class ReadOnly: ReadWrite { }
 
 @available(*, deprecated, renamed: "ReadOnly")
 public typealias Read = ReadOnly
-
-@available(*, deprecated, renamed: "ReadWrite")
-public typealias Write = ReadWrite
