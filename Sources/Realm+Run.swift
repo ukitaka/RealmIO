@@ -17,7 +17,7 @@ public extension Realm {
     /// - Returns: realm operation result.
     /// - Throws: `Realm.Error` or error thrown by user.
     @discardableResult
-    public func run<T>(io: RealmRead<T>) throws -> T {
+    public func run<T>(io: RealmRO<T>) throws -> T {
         return try io._run(self)
     }
 
@@ -27,7 +27,7 @@ public extension Realm {
     /// - Returns: realm operation result.
     /// - Throws: `Realm.Error` or error thrown by user.
     @discardableResult
-    public func run<T>(io: RealmWrite<T>) throws -> T {
+    public func run<T>(io: RealmRW<T>) throws -> T {
         return try writeAndReturn { try io._run(self) }
     }
 
@@ -38,7 +38,7 @@ public extension Realm {
     /// - Throws: `Realm.Error` or error thrown by user.
     @discardableResult
     public func run<T>(io: AnyRealmIO<T>) throws -> T {
-        if io.isWrite {
+        if io.isReadWrite {
             return try writeAndReturn { try io._run(self) }
         } else {
             return try io._run(self)
@@ -54,7 +54,7 @@ public extension Realm {
     /// - Returns: realm operation result.
     /// - Throws: `Realm.Error` or error thrown by user.
     @discardableResult
-    public static func run<T>(io: RealmRead<T>) throws -> T {
+    public static func run<T>(io: RealmRO<T>) throws -> T {
         return try io._run(Realm())
     }
 
@@ -64,7 +64,7 @@ public extension Realm {
     /// - Returns: realm operation result.
     /// - Throws: `Realm.Error` or error thrown by user.
     @discardableResult
-    public static func run<T>(io: RealmWrite<T>) throws -> T {
+    public static func run<T>(io: RealmRW<T>) throws -> T {
         let realm = try Realm()
         return try realm.writeAndReturn { try io._run(realm) }
     }
@@ -76,7 +76,7 @@ public extension Realm {
     /// - Throws: `Realm.Error` or error thrown by user.
     @discardableResult
     public static func run<T>(io: AnyRealmIO<T>) throws -> T {
-        if io.isWrite {
+        if io.isReadWrite {
             let realm = try Realm()
             return try realm.writeAndReturn { try io._run(realm) }
         } else {

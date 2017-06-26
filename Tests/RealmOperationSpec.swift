@@ -28,7 +28,7 @@ class RealmOperationSpec: QuickSpec {
             it ("works well to add 1 object") {
                 let addA = Realm.IO.add(Dog.dogA)
                 try! self.realm.run(io: addA)
-                let readA = RealmRead<Dog>.object(forPrimaryKey: "A")
+                let readA = RealmRO<Dog>.object(forPrimaryKey: "A")
                 let result = try! self.realm.run(io: readA)
                 expect(result?.name).to(equal("A"))
                 expect(result?.age).to(equal(10))
@@ -37,7 +37,7 @@ class RealmOperationSpec: QuickSpec {
             it ("works well to update 1 object") {
                 let addA = Realm.IO.add(Dog.dogA)
                 try! self.realm.run(io: addA)
-                let readA = RealmRead<Dog>.object(forPrimaryKey: "A")
+                let readA = RealmRO<Dog>.object(forPrimaryKey: "A")
                 let updateAndReadA = readA
                     .map { $0! }
                     .modify { (dog: Dog) in dog.age = 20 }
@@ -74,7 +74,7 @@ class RealmOperationSpec: QuickSpec {
 
             it ("works well to create object") {
                 let createE = Realm.IO.create(Dog.self, value: ["name": "E"], update: false)
-                let readE = RealmRead<Dog>.object(forPrimaryKey: "E")
+                let readE = RealmRO<Dog>.object(forPrimaryKey: "E")
                 let result = try! self.realm.run(io: createE.flatMap { _ in readE })
                 expect(result?.name).to(equal("E"))
             }
@@ -89,7 +89,7 @@ class RealmOperationSpec: QuickSpec {
 
             it ("works well to create object dynamically") {
                 let createE = Realm.IO.dynamicCreate("Dog", value: ["name": "E"], update: false)
-                let readE = RealmRead<Dog>.object(forPrimaryKey: "E")
+                let readE = RealmRO<Dog>.object(forPrimaryKey: "E")
                 let result = try! self.realm.run(io: createE.flatMap { _ in readE })
                 expect(result?.name).to(equal("E"))
             }
@@ -104,7 +104,7 @@ class RealmOperationSpec: QuickSpec {
             }
 
             it ("works well to delete 1 object") {
-                let delete = RealmRead<Dog>.object(forPrimaryKey: "A").flatMap { dog in Realm.IO.delete(dog!) }
+                let delete = RealmRO<Dog>.object(forPrimaryKey: "A").flatMap { dog in Realm.IO.delete(dog!) }
                 try! self.realm.run(io: delete)
                 let readAll = Realm.IO.objects(Dog.self)
                 let result = try! self.realm.run(io: readAll)
@@ -131,7 +131,7 @@ class RealmOperationSpec: QuickSpec {
                 try! self.realm.write {
                     self.realm.deleteAll()
                 }
-                let addOwner = RealmWrite<Owner>.create()
+                let addOwner = RealmRW<Owner>.create()
                     .modify { $0.dogs.append(objectsIn: Dog.dogs) }
                     .flatMap(Realm.IO.add)
 

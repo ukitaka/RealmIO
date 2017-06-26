@@ -12,52 +12,58 @@ import RealmSwift
 public struct AnyRealmIO<T> {
     internal let _run: (Realm) throws -> T
 
-    public let isRead: Bool
+    public let isReadOnly: Bool
 
-    public var isWrite: Bool {
-        return !isRead
+    @available(*, deprecated, renamed: "isReadOnly")
+    public var isRead: Bool { return isReadOnly }
+
+    public var isReadWrite: Bool {
+        return !isReadOnly
     }
+
+    @available(*, deprecated, renamed: "isReadWrite")
+    public var isWrite: Bool { return isReadWrite }
 
     public init(io: RealmIO<ReadOnly, T>) {
         self._run = io._run
-        self.isRead = true
+        self.isReadOnly = true
     }
 
     public init(io: RealmIO<ReadWrite, T>) {
         self._run = io._run
-        self.isRead = false
+        self.isReadOnly = false
     }
 
-    internal init(isRead: Bool, run: @escaping (Realm) throws -> T) {
+    internal init(isReadOnly: Bool, run: @escaping (Realm) throws -> T) {
         self._run = run
-        self.isRead = isRead
+        self.isReadOnly = isReadOnly
     }
 
-    public init(error: Error, isRead: Bool = true) {
+    public init(error: Error, isReadOnly: Bool = true) {
         self._run = { _ in throw error }
-        self.isRead = isRead
+        self.isReadOnly = isReadOnly
     }
 
     public func map<S>(_ f: @escaping (T) throws -> S) -> AnyRealmIO<S> {
-        return AnyRealmIO<S>(isRead: isRead) { realm in
+        return AnyRealmIO<S>(isReadOnly: isReadOnly) { realm in
             try f(self._run(realm))
         }
     }
 
-    public func flatMap<S>(_ f: @escaping (T) throws -> RealmWrite<S>) -> RealmWrite<S> {
-        return RealmWrite<S> { realm in
+    public func flatMap<S>(_ f: @escaping (T) throws -> RealmRW<S>) -> RealmRW<S> {
+        return RealmRW<S> { realm in
             try f(self._run(realm))._run(realm)
         }
     }
 
-    public func flatMap<S>(_ f: @escaping (T) throws -> RealmRead<S>) -> AnyRealmIO<S> {
-        return AnyRealmIO<S>(isRead: isRead) { realm in
+    public func flatMap<S>(_ f: @escaping (T) throws -> RealmRO<S>) -> AnyRealmIO<S> {
+        return AnyRealmIO<S>(isReadOnly: isReadOnly) { realm in
             try f(self._run(realm))._run(realm)
         }
     }
 
     public func ask() -> AnyRealmIO<Realm> {
-        return AnyRealmIO <Realm>(isRead: isRead) { realm in
+        return AnyRealmIO <Realm>(isReadOnly: isReadOnly) { realm in
             return realm
         }
     }
