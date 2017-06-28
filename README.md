@@ -63,21 +63,21 @@ try realm.write {
 
 `RealmIO<RW, T>` represents a realm operation.
 
-+ `RW` is actually `Read` or `Write`. It represents that operation is readonly or not.
++ `RW` is actually `ReadOnly` or `ReadWrite`. It represents that operation is readonly or not.
 + `T` is a return value type.
 
-and you can also use `RealmRead<T>` and `RealmWrite<T>`, these are just alias of `RealmIO<Read, T>` and `RealmIO<Write, T>` .
+and you can also use `RealmRO<T>` and `RealmRW<T>`, these are just alias of `RealmIO<ReadOnly, T>` and `RealmIO<ReadWrite, T>` .
 
 ```swift
-public typealias RealmRead<T> = RealmIO<Read, T>
+public typealias RealmRO<T> = RealmIO<ReadOnly, T>
 
-public typealias RealmWrite<T> = RealmIO<Write, T>
+public typealias RealmRW<T> = RealmIO<ReadWrite, T>
 ```
 
-For example, operation that reads `User` object from realm is typed `RealmRead<User>`.
+For example, operation that reads `User` object from realm is typed `RealmRO<User>`.
 
 ```swift
-func find(by userID: Int) -> RealmRead<User> {
+func find(by userID: Int) -> RealmRO<User> {
     ...
 }
 ```
@@ -89,11 +89,11 @@ If you already know about `reader monad`, `RealmIO<RW, T>` is the same as `Reade
 You can run preceding realm operation with `realm.run(io:)`.
 
 ```swift
-let io: RealmRead<User> = find(by: 123)
+let io: RealmRO<User> = find(by: 123)
 let result = try? realm.run(io: io)
 ```
 
-If operation needs to write to realm (it means `io` is an instance of `RealmWrite<T>`),
+If operation needs to write to realm (it means `io` is an instance of `RealmRW<T>`),
 `realm.run(io:)` begins transaction automatically.
 
 `realm.run(io:)` throws 2 error types.
@@ -106,15 +106,15 @@ If operation needs to write to realm (it means `io` is an instance of `RealmWrit
 `flatMap` allows you to compose realm actions.
 
 ```swift
-func add(dog: Dog) -> RealmWrite<Void> {
+func add(dog: Dog) -> RealmRW<Void> {
     ...
 }
 
-func add(cat: Cat) -> RealmWrite<Void> {
+func add(cat: Cat) -> RealmRW<Void> {
     ...
 }
 
-let io: RealmWrite<Void> = add(dog: myDog).flatMap { _ in add(cat: myCat) }
+let io: RealmRW<Void> = add(dog: myDog).flatMap { _ in add(cat: myCat) }
 ```
 
 And you can run composed operation **in a same transaction**.
@@ -125,10 +125,10 @@ realm.run(io: io) // Add `myDog` and `myCat` in a same transaction.
 
 `RW` type parameter of composed operation is determined by 2 operation types.
 ```swift
-read.flatMap { _ in read }   // Read
-read.flatMap { _ in write }  // Write
-write.flatMap { _ in read }  // Write
-write.flatMap { _ in write } // Write
+read.flatMap { _ in read }   // ReadOnly
+read.flatMap { _ in write }  // ReadWrite
+write.flatMap { _ in read }  // ReadWrite
+write.flatMap { _ in write } // ReadWrite
 ```
 
 ### Use convenient operator
@@ -152,7 +152,7 @@ let io2 = Realm.IO.objects(Dog.self).flatMap(Realm.IO.delete)
 try realm.run(io: io2)
 ```
 
-Since `ThreadSafeReference` has a constraint that references can not be resolved within write transactions, implementation with `ThreadSafeReference` can not be done in 1.0. I'm considering measures after the next version.
+Since `ThreadSafeReference` has a constraint that references can not be resolved within write transactions, implementation with `ThreadSafeReference` can not be done in 1.1. I'm considering measures after the next version.
 
 ## Installation
 

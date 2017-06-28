@@ -19,37 +19,37 @@ class AnyRealmIOSpec: QuickSpec {
         super.spec()
 
         it("works well with `init(io:)`") {
-            let read = AnyRealmIO(io: RealmRead<Void> { _ in })
-            expect(read.isRead).to(beTrue())
+            let read = AnyRealmIO(io: RealmRO<Void> { _ in })
+            expect(read.isReadOnly).to(beTrue())
             expect(try! self.realm.run(io: read)).notTo(throwError())
 
-            let write = AnyRealmIO(io: RealmWrite<Void> { _ in })
-            expect(write.isWrite).to(beTrue())
+            let write = AnyRealmIO(io: RealmRW<Void> { _ in })
+            expect(write.isReadWrite).to(beTrue())
             expect(try! self.realm.run(io: write)).notTo(throwError())
         }
 
-        it("works well with `init(error:isRead)`") {
+        it("works well with `init(error:isReadOnly)`") {
             struct MyError: Error { }
             let error = MyError()
             let read = AnyRealmIO<Void>(error: error)
-            expect(read.isRead).to(beTrue())
+            expect(read.isReadOnly).to(beTrue())
             expect { try self.realm.run(io: read) }.to(throwError())
 
-            let write = AnyRealmIO<Void>(error: error, isRead: false)
-            expect(write.isWrite).to(beTrue())
+            let write = AnyRealmIO<Void>(error: error, isReadOnly: false)
+            expect(write.isReadWrite).to(beTrue())
             expect { try self.realm.run(io: write) }.to(throwError())
         }
 
         it("works well with `map` operator") {
-            let read = AnyRealmIO<Void>(io: RealmRead<Void> { _ in }).map { _ in "hello" }
+            let read = AnyRealmIO<Void>(io: RealmRO<Void> { _ in }).map { _ in "hello" }
             expect(try! self.realm.run(io: read)).to(equal("hello"))
         }
 
         it("works well with `flatMap` operator") {
-            let read = RealmRead<String> { _ in "read" }
-            let write = RealmWrite<String> { _ in "write" }
+            let read = RealmRO<String> { _ in "read" }
+            let write = RealmRW<String> { _ in "write" }
             let io1 = AnyRealmIO(io: read).flatMap { _ in  write }
-            expect(io1).to(beAnInstanceOf(RealmWrite<String>.self))
+            expect(io1).to(beAnInstanceOf(RealmRW<String>.self))
             expect(try! self.realm.run(io: io1)).to(equal("write"))
 
             let io2 = AnyRealmIO(io: read).flatMap { _ in read }
@@ -58,7 +58,7 @@ class AnyRealmIOSpec: QuickSpec {
         }
 
         it("works well with `ask` operator") {
-            let read = RealmRead<String> { _ in "read" }
+            let read = RealmRO<String> { _ in "read" }
             let io = AnyRealmIO(io: read).ask()
             expect(io).to(beAnInstanceOf(AnyRealmIO<Realm>.self))
             expect(try! self.realm.run(io: io)).to(equal(self.realm))

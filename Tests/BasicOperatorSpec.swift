@@ -21,9 +21,9 @@ class BasicOperatorSpec: QuickSpec {
             it("should throw Error when run io that initalized with `init(error:)`") {
                 struct MyError: Error { }
                 let error = MyError()
-                let read = RealmIO<Read, Void>(error: error)
+                let read = RealmIO<ReadOnly, Void>(error: error)
                 expect { try self.realm.run(io: read) }.to(throwError())
-                let write = RealmIO<Write, Void>(error: error)
+                let write = RealmIO<ReadWrite, Void>(error: error)
                 expect { try self.realm.run(io: write) }.to(throwError())
             }
         }
@@ -42,32 +42,32 @@ class BasicOperatorSpec: QuickSpec {
                     .map { $0?.name ?? "" }
                 let result = try! self.realm.run(io: io)
 
-                expect(io).to(beAnInstanceOf(RealmRead<String>.self))
+                expect(io).to(beAnInstanceOf(RealmRO<String>.self))
                 expect(result).to(equal("A"))
             }
 
             it("does not affect Read / Write type parameter") {
-                let readIO = RealmRead<Void> { _ in }
-                let writeIO = RealmWrite<Void> { _ in }
+                let readIO = RealmRO<Void> { _ in }
+                let writeIO = RealmRW<Void> { _ in }
 
-               expect(readIO.map(id).isRead).to(beTrue())
-               expect(writeIO.map(id).isWrite).to(beTrue())
+               expect(readIO.map(id).isReadOnly).to(beTrue())
+               expect(writeIO.map(id).isReadWrite).to(beTrue())
             }
         }
 
         describe("`ask` operator") {
             it("works well with `ask` operator") {
-                let io = (RealmRead<Void> { _ in }).ask()
-                expect(io).to(beAnInstanceOf(RealmRead<Realm>.self))
+                let io = (RealmRO<Void> { _ in }).ask()
+                expect(io).to(beAnInstanceOf(RealmRO<Realm>.self))
                 expect(try! self.realm.run(io: io)).to(be(self.realm))
             }
 
             it("does not affect Read / Write type parameter") {
-                let readIO = RealmRead<Void> { _ in }
-                let writeIO = RealmWrite<Void> { _ in }
+                let readIO = RealmRO<Void> { _ in }
+                let writeIO = RealmRW<Void> { _ in }
 
-                expect(readIO.ask().isRead).to(beTrue())
-                expect(writeIO.ask().isWrite).to(beTrue())
+                expect(readIO.ask().isReadOnly).to(beTrue())
+                expect(writeIO.ask().isReadWrite).to(beTrue())
             }
         }
 
@@ -80,8 +80,8 @@ class BasicOperatorSpec: QuickSpec {
             }
 
             it("works well with `flatMap` operator (Read -> Read)") {
-                let composedIO = RealmRead<String> { _ in "A" }
-                    .flatMap { name in RealmRead<Dog>.object(forPrimaryKey: name) }
+                let composedIO = RealmRO<String> { _ in "A" }
+                    .flatMap { name in RealmRO<Dog>.object(forPrimaryKey: name) }
 
                 let result = try! self.realm.run(io: composedIO)
 
@@ -90,10 +90,10 @@ class BasicOperatorSpec: QuickSpec {
             }
 
             it("works well with `flatMap` operator (Read -> Write)") {
-                let readDogIO = RealmRead<Dog>.object(forPrimaryKey: "A").map { $0! }
+                let readDogIO = RealmRO<Dog>.object(forPrimaryKey: "A").map { $0! }
                 
-                func modifyDogIO(dog: Dog) -> RealmWrite<Dog> {
-                    return RealmWrite<Dog> { realm in
+                func modifyDogIO(dog: Dog) -> RealmRW<Dog> {
+                    return RealmRW<Dog> { realm in
                         dog.age = 18
                         return dog
                     }
@@ -107,8 +107,8 @@ class BasicOperatorSpec: QuickSpec {
             }
 
             it("works well with `flatMap` operator (Write -> Any)") {
-                let composedIO = RealmWrite<String> { _ in "A" }
-                    .flatMap { _ in RealmWrite { _ in "B" } }
+                let composedIO = RealmRW<String> { _ in "A" }
+                    .flatMap { _ in RealmRW { _ in "B" } }
 
                 let result = try! self.realm.run(io: composedIO)
                 expect(result).to(equal("B"))
@@ -117,21 +117,21 @@ class BasicOperatorSpec: QuickSpec {
 
         describe("`writeIO` operator") {
             it("works well with `writeIO` operator") {
-                let readIO = RealmRead<Void> { _ in }
-                expect(readIO.writeIO).to(beAnInstanceOf(RealmWrite<Void>.self))
+                let readIO = RealmRO<Void> { _ in }
+                expect(readIO.writeIO).to(beAnInstanceOf(RealmRW<Void>.self))
             }
         }
 
         describe("`modify` operator") {
             context("`modify` operator in `Read` io.") {
                 it("works well with `modify` operator") {
-                    let readDogIO = RealmRead<Dog>
+                    let readDogIO = RealmRO<Dog>
                         .object(forPrimaryKey: "A")
                         .map { $0! }
                     
                     let io = readDogIO.modify { $0.age = 18 }
-                    expect(io).to(beAnInstanceOf(RealmWrite<Dog>.self))
-                    expect(io.isWrite).to(beTrue())
+                    expect(io).to(beAnInstanceOf(RealmRW<Dog>.self))
+                    expect(io.isReadWrite).to(beTrue())
 
                     let ageio = io.map { $0.age }
                     expect(try? self.realm.run(io: ageio)).to(equal(18))
@@ -140,14 +140,14 @@ class BasicOperatorSpec: QuickSpec {
 
             context("`modify` operator in `Write` io.") {
                 it("works well with `modify` operator") {
-                    let writeDogIO = RealmRead<Dog>
+                    let writeDogIO = RealmRO<Dog>
                         .object(forPrimaryKey: "A")
                         .map { $0! }
                         .writeIO
 
                     let io = writeDogIO.modify { $0.age = 19 }
-                    expect(io).to(beAnInstanceOf(RealmWrite<Dog>.self))
-                    expect(io.isWrite).to(beTrue())
+                    expect(io).to(beAnInstanceOf(RealmRW<Dog>.self))
+                    expect(io.isReadWrite).to(beTrue())
 
                     let ageio = io.map { $0.age }
                     expect(try? self.realm.run(io: ageio)).to(equal(19))
@@ -155,20 +155,20 @@ class BasicOperatorSpec: QuickSpec {
             }
         }
 
-        describe("`isWrite` and `isRead` operator") {
-            context("`isWrite` and `isRead` operator in `Read` io.") {
+        describe("`isReadWrite` and `isReadOnly` operator") {
+            context("`isReadWrite` and `isReadOnly` operator in `Read` io.") {
                 it("works well with `modify` operator") {
-                    let io = RealmRead<Void> { _ in }
-                    expect(io.isRead).to(beTrue())
-                    expect(io.isWrite).to(beFalse())
+                    let io = RealmRO<Void> { _ in }
+                    expect(io.isReadOnly).to(beTrue())
+                    expect(io.isReadWrite).to(beFalse())
                 }
             }
 
-            context("`isWrite` and `isRead` operator in `Write` io.") {
+            context("`isReadWrite` and `isReadOnly` operator in `Write` io.") {
                 it("works well with `modify` operator") {
-                    let io = RealmWrite<Void> { _ in }
-                    expect(io.isRead).to(beFalse())
-                    expect(io.isWrite).to(beTrue())
+                    let io = RealmRW<Void> { _ in }
+                    expect(io.isReadOnly).to(beFalse())
+                    expect(io.isReadWrite).to(beTrue())
                 }
             }
         }

@@ -8,14 +8,20 @@
 
 import Foundation
 
-// MARK: - Read
+// MARK: - ReadWrite
 
-/// `Read` is used as `RW` type parameter of `RealmIO<RW, T>`
-/// It represents that realm operation is readonly.
-public struct Read { }
-
-// MARK: - Write
-
-/// `Write` is used as `RW` type parameter of `RealmIO<RW, T>`
+/// `ReadWrite` is used as `RW` type parameter of `RealmIO<RW, T>`
 /// It represents that realm operation needs to call `realm.write`.
-public struct Write { }
+public class ReadWrite { }
+
+@available(*, deprecated, renamed: "ReadWrite")
+public typealias Write = ReadWrite
+
+// MARK: - ReadOnly
+
+/// `ReadOnly` is used as `RW` type parameter of `RealmIO<RW, T>`
+/// It represents that realm operation is readonly.
+public class ReadOnly: ReadWrite { }
+
+@available(*, deprecated, renamed: "ReadOnly")
+public typealias Read = ReadOnly
