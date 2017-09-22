@@ -11,8 +11,8 @@ import RealmSwift
 import RealmIO
 
 class Dog: Object {
-    dynamic var name: String = ""
-    dynamic var age: Int = 0
+    @objc dynamic var name: String = ""
+    @objc dynamic var age: Int = 0
 
     override class func primaryKey() -> String? {
         return "name"

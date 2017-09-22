@@ -170,10 +170,8 @@ github "ukitaka/RealmIO"
 
 ## Requirements
 
-`RealmIO` uses swift 3.1 functionality, so support only swift 3.1 now.
-
-+ Xcode 8.3
-+ swift 3.1
++ Xcode 9
++ swift 4.0
 
 `RealmIO` supports following platforms.
 
