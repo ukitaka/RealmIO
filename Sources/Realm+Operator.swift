@@ -120,7 +120,7 @@ public extension Realm.IO {
     ///  use with `flatMap`.
     /// - Parameter objects: A list of objects to delete.
     /// - Returns: `Write` operation
-    public static func delete<T: Object>(_ objects: List<T>) -> RealmRW<Void> {
+    public static func delete<T>(_ objects: List<T>) -> RealmRW<Void> {
         return RealmRW<Void> { realm in realm.delete(objects) }
     }
 
@@ -131,7 +131,7 @@ public extension Realm.IO {
     ///  use with `flatMap`.
     /// - Parameter objects: A `Results` containing the objects to be deleted.
     /// - Returns: `Write` operation
-    public static func delete<T: Object>(_ objects: Results<T>) -> RealmRW<Void> {
+    public static func delete<T>(_ objects: Results<T>) -> RealmRW<Void> {
         return RealmRW<Void> { realm in return realm.delete(objects) }
     }
 

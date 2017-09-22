@@ -99,7 +99,7 @@ public extension RealmIO where RW: ReadOnly {
 
 // MARK: - modify
 
-public extension RealmIO where T: Object, RW: ReadWrite {
+public extension RealmIO where T: Object {
     /// Util method to modify `Object`
     public func modify(_ transform: @escaping (T) -> ()) -> RealmRW<T> {
         return flatMap { t in
