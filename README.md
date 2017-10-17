@@ -152,7 +152,7 @@ let io2 = Realm.IO.objects(Dog.self).flatMap(Realm.IO.delete)
 try realm.run(io: io2)
 ```
 
-Since `ThreadSafeReference` has a constraint that references can not be resolved within write transactions, implementation with `ThreadSafeReference` can not be done in 1.1. I'm considering measures after the next version.
+Since `ThreadSafeReference` has a constraint that references can not be resolved within write transactions, implementation with `ThreadSafeReference` can not be done in 2.0. I'm considering measures after the next version.
 
 ## Installation
 
@@ -172,6 +172,7 @@ github "ukitaka/RealmIO"
 
 + Xcode 9
 + swift 4.0
++ Realm ~> 3.0
 
 `RealmIO` supports following platforms.
 

@@ -109,7 +109,7 @@ public extension Realm.IO {
     ///     `Results<Object>`, or any other Swift `Sequence` whose
     ///     elements are `Object`s (subject to the caveats above).
     /// - Returns: `Write` operation
-    public static func delete<S: Sequence>(_ objects: S) -> RealmRW<Void> where S.Iterator.Element: Object {
+    public static func delete<S>(_ objects: S) -> RealmRW<Void> where S: Sequence, S.Iterator.Element: Object {
         return RealmRW<Void> { realm in return realm.delete(objects) }
     }
 
@@ -120,7 +120,7 @@ public extension Realm.IO {
     ///  use with `flatMap`.
     /// - Parameter objects: A list of objects to delete.
     /// - Returns: `Write` operation
-    public static func delete<T>(_ objects: List<T>) -> RealmRW<Void> {
+    public static func delete<Element>(_ objects: List<Element>) -> RealmRW<Void> where Element: Object {
         return RealmRW<Void> { realm in realm.delete(objects) }
     }
 
@@ -131,7 +131,7 @@ public extension Realm.IO {
     ///  use with `flatMap`.
     /// - Parameter objects: A `Results` containing the objects to be deleted.
     /// - Returns: `Write` operation
-    public static func delete<T>(_ objects: Results<T>) -> RealmRW<Void> {
+    public static func delete<Element>(_ objects: Results<Element>) -> RealmRW<Void> where Element: Object {
         return RealmRW<Void> { realm in return realm.delete(objects) }
     }
 

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "RealmIO"
-  s.version      = "1.2.0"
+  s.version      = "2.0.0"
   s.summary      = "RealmIO makes Realm operation more safely, reusable and composable by using reader monad."
   s.description  = <<-DESC
   RealmIO makes Realm operation more safely, reusable and composable by using reader monad.
@@ -18,5 +18,5 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/ukitaka/RealmIO.git", :tag => s.version.to_s }
   s.source_files  = "Sources/**/*"
   s.frameworks  = "Foundation"
-  s.dependency 'RealmSwift'
+  s.dependency 'RealmSwift',  '~> 3.0'
 end
