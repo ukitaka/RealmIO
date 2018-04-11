@@ -3,7 +3,7 @@
 //  RealmIO
 //
 //  Created by ukitaka on 2017/05/11.
-//  Copyright © 2017年 waft. All rights reserved.
+//  Copyright © 2018 waft. All rights reserved.
 //
 
 import RealmSwift
